@@ -14,65 +14,33 @@ class OrzNFC: NSObject {
 
     private override init() {}
     
-    private var readerSession: NFCNDEFReaderSession?
+    private var ndefReaderSession: NFCNDEFReaderSession?
     
     private var tagReaderSession: NFCTagReaderSession?
 }
 
 extension OrzNFC {
     
-    func scan() {
+    func ndefScan() {
         
         guard NFCNDEFReaderSession.readingAvailable else {
             return
         }
         
-        readerSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
-        readerSession?.alertMessage = Message.alert
-        readerSession?.begin()
+        ndefReaderSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
+        ndefReaderSession?.alertMessage = AlertMessage.ndefAlert
+        ndefReaderSession?.begin()
     }
     
-    func readTag() {
+    func tagScan(pollingOption: NFCTagReaderSession.PollingOption = .iso14443) {
         
         guard NFCNDEFReaderSession.readingAvailable else {
             return
         }
         
-        tagReaderSession = NFCTagReaderSession(pollingOption: .iso14443, delegate: self, queue: nil)
-        tagReaderSession?.alertMessage = Message.tagAlert
+        tagReaderSession = NFCTagReaderSession(pollingOption: pollingOption, delegate: self, queue: nil)
+        tagReaderSession?.alertMessage = AlertMessage.tagAlert
         tagReaderSession?.begin()
     }
 }
 
-extension OrzNFC: NFCNDEFReaderSessionDelegate {
-    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-        
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
-        
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-    
-    }
-}
-
-extension OrzNFC: NFCTagReaderSessionDelegate {
-        
-    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
-    
-    }
-    
-    func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
-        
-    }
-
-    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
-        
-    }
-}

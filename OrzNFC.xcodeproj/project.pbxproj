@@ -16,6 +16,9 @@
 		F32C811F22E3479600A9FE96 /* OrzNFCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C811E22E3479600A9FE96 /* OrzNFCTests.swift */; };
 		F32C812C22E355D000A9FE96 /* OrzNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C812B22E355D000A9FE96 /* OrzNFC.swift */; };
 		F32C812E22E35FEB00A9FE96 /* OrzNFC+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C812D22E35FEB00A9FE96 /* OrzNFC+Constants.swift */; };
+		F3D0CF8222E4278A00A32F76 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F3D0CF8122E4278A00A32F76 /* README.md */; };
+		F3D0CF8422E43E1400A32F76 /* OrzNFC+NDEF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */; };
+		F3D0CF8622E43E3B00A32F76 /* OrzNFC+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		F32C812B22E355D000A9FE96 /* OrzNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrzNFC.swift; path = ../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC.swift; sourceTree = "<group>"; };
 		F32C812D22E35FEB00A9FE96 /* OrzNFC+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+Constants.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+Constants.swift"; sourceTree = "<group>"; };
 		F32C813022E360B600A9FE96 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		F3D0CF8122E4278A00A32F76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/README.md; sourceTree = "<group>"; };
+		F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+NDEF.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+NDEF.swift"; sourceTree = "<group>"; };
+		F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+Tags.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+Tags.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 		F32C80FB22E3479200A9FE96 = {
 			isa = PBXGroup;
 			children = (
+				F3D0CF8122E4278A00A32F76 /* README.md */,
 				F32C810622E3479200A9FE96 /* OrzNFC */,
 				F32C811D22E3479600A9FE96 /* OrzNFCTests */,
 				F32C810522E3479200A9FE96 /* Products */,
@@ -120,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				F32C812B22E355D000A9FE96 /* OrzNFC.swift */,
+				F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */,
+				F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */,
 				F32C812D22E35FEB00A9FE96 /* OrzNFC+Constants.swift */,
 			);
 			path = CoreNFC;
@@ -216,6 +225,7 @@
 			files = (
 				F32C811422E3479600A9FE96 /* LaunchScreen.storyboard in Resources */,
 				F32C811122E3479600A9FE96 /* Preview Assets.xcassets in Resources */,
+				F3D0CF8222E4278A00A32F76 /* README.md in Resources */,
 				F32C810E22E3479600A9FE96 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +244,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D0CF8422E43E1400A32F76 /* OrzNFC+NDEF.swift in Sources */,
 				F32C810822E3479200A9FE96 /* AppDelegate.swift in Sources */,
+				F3D0CF8622E43E3B00A32F76 /* OrzNFC+Tags.swift in Sources */,
 				F32C812E22E35FEB00A9FE96 /* OrzNFC+Constants.swift in Sources */,
 				F32C812C22E355D000A9FE96 /* OrzNFC.swift in Sources */,
 				F32C810A22E3479200A9FE96 /* SceneDelegate.swift in Sources */,
@@ -403,7 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
