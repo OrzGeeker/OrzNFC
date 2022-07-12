@@ -19,6 +19,9 @@
 		F3D0CF8222E4278A00A32F76 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F3D0CF8122E4278A00A32F76 /* README.md */; };
 		F3D0CF8422E43E1400A32F76 /* OrzNFC+NDEF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */; };
 		F3D0CF8622E43E3B00A32F76 /* OrzNFC+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */; };
+		F3E6A44E287CA4680032018E /* OrzNFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A44D287CA4680032018E /* OrzNFCReader.swift */; };
+		F3E6AE28287D82DD0032018E /* ACR122UA9.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6AE27287D82DD0032018E /* ACR122UA9.swift */; };
+		F3E6AE2A287D82FD0032018E /* Data+Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6AE29287D82FD0032018E /* Data+Representation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,18 @@
 			remoteInfo = OrzNFC;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F3E6A449287CA4680032018E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F32C810422E3479200A9FE96 /* OrzNFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzNFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +65,12 @@
 		F3D0CF8122E4278A00A32F76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/README.md; sourceTree = "<group>"; };
 		F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+NDEF.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+NDEF.swift"; sourceTree = "<group>"; };
 		F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+Tags.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+Tags.swift"; sourceTree = "<group>"; };
+		F3E6A44B287CA4680032018E /* OrzNFCReader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OrzNFCReader; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E6A44D287CA4680032018E /* OrzNFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCReader.swift; sourceTree = "<group>"; };
+		F3E6A452287CA67F0032018E /* OrzNFCReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrzNFCReader.entitlements; sourceTree = "<group>"; };
+		F3E6A453287CA76C0032018E /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = DEVELOPER_DIR; };
+		F3E6AE27287D82DD0032018E /* ACR122UA9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACR122UA9.swift; sourceTree = "<group>"; };
+		F3E6AE29287D82FD0032018E /* Data+Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Representation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +88,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3E6A448287CA4680032018E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,6 +104,7 @@
 				F3D0CF8122E4278A00A32F76 /* README.md */,
 				F32C810622E3479200A9FE96 /* OrzNFC */,
 				F32C811D22E3479600A9FE96 /* OrzNFCTests */,
+				F3E6A44C287CA4680032018E /* OrzNFCReader */,
 				F32C810522E3479200A9FE96 /* Products */,
 				F32C812F22E360B600A9FE96 /* Frameworks */,
 			);
@@ -86,6 +115,7 @@
 			children = (
 				F32C810422E3479200A9FE96 /* OrzNFC.app */,
 				F32C811A22E3479600A9FE96 /* OrzNFCTests.xctest */,
+				F3E6A44B287CA4680032018E /* OrzNFCReader */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,9 +167,21 @@
 		F32C812F22E360B600A9FE96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3E6A453287CA76C0032018E /* CryptoTokenKit.framework */,
 				F32C813022E360B600A9FE96 /* CoreNFC.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3E6A44C287CA4680032018E /* OrzNFCReader */ = {
+			isa = PBXGroup;
+			children = (
+				F3E6A452287CA67F0032018E /* OrzNFCReader.entitlements */,
+				F3E6A44D287CA4680032018E /* OrzNFCReader.swift */,
+				F3E6AE27287D82DD0032018E /* ACR122UA9.swift */,
+				F3E6AE29287D82FD0032018E /* Data+Representation.swift */,
+			);
+			path = OrzNFCReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,13 +222,30 @@
 			productReference = F32C811A22E3479600A9FE96 /* OrzNFCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F3E6A44A287CA4680032018E /* OrzNFCReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3E6A451287CA4680032018E /* Build configuration list for PBXNativeTarget "OrzNFCReader" */;
+			buildPhases = (
+				F3E6A447287CA4680032018E /* Sources */,
+				F3E6A448287CA4680032018E /* Frameworks */,
+				F3E6A449287CA4680032018E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrzNFCReader;
+			productName = OrzNFCReader;
+			productReference = F3E6A44B287CA4680032018E /* OrzNFCReader */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F32C80FC22E3479200A9FE96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = joker;
 				TargetAttributes = {
@@ -196,6 +255,9 @@
 					F32C811922E3479600A9FE96 = {
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = F32C810322E3479200A9FE96;
+					};
+					F3E6A44A287CA4680032018E = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
@@ -214,6 +276,7 @@
 			targets = (
 				F32C810322E3479200A9FE96 /* OrzNFC */,
 				F32C811922E3479600A9FE96 /* OrzNFCTests */,
+				F3E6A44A287CA4680032018E /* OrzNFCReader */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +322,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32C811F22E3479600A9FE96 /* OrzNFCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3E6A447287CA4680032018E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E6AE28287D82DD0032018E /* ACR122UA9.swift in Sources */,
+				F3E6AE2A287D82FD0032018E /* Data+Representation.swift in Sources */,
+				F3E6A44E287CA4680032018E /* OrzNFCReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +555,38 @@
 			};
 			name = Release;
 		};
+		F3E6A44F287CA4680032018E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = OrzNFCReader/OrzNFCReader.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N62934Y28;
+				ENABLE_HARDENED_RUNTIME = NO;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F3E6A450287CA4680032018E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = OrzNFCReader/OrzNFCReader.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N62934Y28;
+				ENABLE_HARDENED_RUNTIME = NO;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -508,6 +613,15 @@
 			buildConfigurations = (
 				F32C812722E3479600A9FE96 /* Debug */,
 				F32C812822E3479600A9FE96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3E6A451287CA4680032018E /* Build configuration list for PBXNativeTarget "OrzNFCReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3E6A44F287CA4680032018E /* Debug */,
+				F3E6A450287CA4680032018E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,3 +16,8 @@ NFC Read And Wirte Practice on iOS
 
 - [ACR122U 驱动下载](https://www.acs.com.hk/cn/products/73/acr122u-nfc%E8%AF%BB%E5%86%99%E5%99%A8-usb%E6%8E%A5%E5%8F%A3/)
 
+# Term
+
+- CCID(Chip/Smart Card Interface Devices)
+- PICC(Programmable Interface Controller Chip)
+- ATR(Answer To Reset)
