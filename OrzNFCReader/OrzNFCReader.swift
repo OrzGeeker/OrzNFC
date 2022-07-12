@@ -7,6 +7,7 @@
 //
 
 import CryptoTokenKit
+import Combine
 
 @main
 struct OrzNFCReader {
@@ -19,50 +20,98 @@ struct OrzNFCReader {
         return mgr
     }()
     
+    /// 监听是否有读卡器插拔事件
+    private static var slotPublisherCancellable : Cancellable?
     
+    /// 读卡器名称
+    private static let cardReaderName = ACR122UA9.name
+    
+    /// 读卡器插槽
+    private static var cardReaderSlot: TKSmartCardSlot?
+    
+    /// 读卡器状态监听
+    private static var slotStatePublisherCancellable: Cancellable?
+    
+    /// 程序入口
     static func main() {
         
-        guard let slot = manager.slotNamed(ACR122UA9.name) else {
-            print("no smart card solt")
-            return
-        }
-        
-        if let atr = slot.atr?.bytes {
-            print("ATR: \(atr.hexString)")
-        }
-        print("maxInputLength: \(slot.maxInputLength)")
-        print("maxOutputLength: \(slot.maxOutputLength)")
-        print("")
-        guard let card = slot.makeSmartCard() else {
-            print("no smard card on slot")
-            return
-        }
-        
-        print("card is valid: \(card.isValid)")
-        
-        // 异步
-        
-        var terminal = false
-        card.beginSession { reply, error in
-            guard reply else {
-                print(error?.localizedDescription)
+        slotPublisherCancellable = manager.publisher(for: \.slotNames).sink { slotNames in
+
+            guard slotNames.contains(cardReaderName) else {
+                print("读卡器 \(cardReaderName) 未连接")
+                slotStatePublisherCancellable?.cancel()
+                slotStatePublisherCancellable = nil
+                cardReaderSlot = nil
                 return
             }
             
-            card.transmit(ACR122UA9.Command.setLEDStatus(0x0C).request) { reply, error in
-                guard error == nil else {
-                    print(error?.localizedDescription)
+            Task {
+                guard cardReaderSlot == nil else {
+                    print("目前连接的所有读卡器：\(slotNames)")
                     return
                 }
-                print(reply?.hexString)
                 
-                terminal = true
+                guard let slot = await manager.getSlot(withName: cardReaderName) else {
+                    print("找不到读卡器 \(cardReaderName)")
+                    return
+                }
+                
+                cardReaderSlot = slot
+                slotStatePublisherCancellable = cardReaderSlot?.publisher(for: \.state)
+                    .filter { $0 != .probing }
+                    .removeDuplicates()
+                    .sink { state in
+                    switch state {
+                    case .missing:
+                        print("读卡器被拔掉了")
+                    case .empty:
+                        print("没有放上智能卡")
+                    case .muteCard:
+                        print("智能卡无响应命令")
+                    case .probing:
+                        print("正在探测智能卡")
+                    case .validCard:
+                        print("智能卡准备就绪")
+                        dumpCardInfo()
+                        processCard()
+                    @unknown default:
+                        fatalError("读卡器未知状态")
+                    }
+                }
             }
         }
         
-        
-        while !terminal {
+        RunLoop.main.run()
+    }
+}
+
+extension OrzNFCReader {
+    
+    /// 打印读卡器相关信息
+    static func dumpCardInfo() {
+        if let name = cardReaderSlot?.name, let atrHexString = cardReaderSlot?.atr?.bytes.hexString, let maxInputLength = cardReaderSlot?.maxInputLength, let maxOutputLength = cardReaderSlot?.maxOutputLength {
+            print("Reader: \(name)")
+            print("Card ATR: \(atrHexString)")
+            print("APDU MaxInputLength(Reader -> Card): \(maxInputLength)")
+            print("APDU MaxOutputLength(Card -> Reader): \(maxOutputLength)")
+        }
+    }
+    
+    static func processCard() {
+        Task {
+            guard let card = cardReaderSlot?.makeSmartCard() else {
+                return
+            }
             
+            let success = try await card.beginSession()
+            if success {
+                let request = ACR122UA9.Command.firmwareVersion.request
+                let reply = try await card.transmit(request)
+                if let firewareVersion = reply.asciiString {
+                    print("fireware version: \(firewareVersion)")
+                }
+            }
+            card.endSession()
         }
     }
 }

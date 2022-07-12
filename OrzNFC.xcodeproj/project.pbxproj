@@ -22,6 +22,7 @@
 		F3E6A44E287CA4680032018E /* OrzNFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A44D287CA4680032018E /* OrzNFCReader.swift */; };
 		F3E6AE28287D82DD0032018E /* ACR122UA9.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6AE27287D82DD0032018E /* ACR122UA9.swift */; };
 		F3E6AE2A287D82FD0032018E /* Data+Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6AE29287D82FD0032018E /* Data+Representation.swift */; };
+		F3E6B125287DB30F0032018E /* ACRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6B124287DB30F0032018E /* ACRError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F3E6A453287CA76C0032018E /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = DEVELOPER_DIR; };
 		F3E6AE27287D82DD0032018E /* ACR122UA9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACR122UA9.swift; sourceTree = "<group>"; };
 		F3E6AE29287D82FD0032018E /* Data+Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Representation.swift"; sourceTree = "<group>"; };
+		F3E6B124287DB30F0032018E /* ACRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACRError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				F3E6A452287CA67F0032018E /* OrzNFCReader.entitlements */,
 				F3E6A44D287CA4680032018E /* OrzNFCReader.swift */,
 				F3E6AE27287D82DD0032018E /* ACR122UA9.swift */,
+				F3E6B124287DB30F0032018E /* ACRError.swift */,
 				F3E6AE29287D82FD0032018E /* Data+Representation.swift */,
 			);
 			path = OrzNFCReader;
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E6AE28287D82DD0032018E /* ACR122UA9.swift in Sources */,
+				F3E6B125287DB30F0032018E /* ACRError.swift in Sources */,
 				F3E6AE2A287D82FD0032018E /* Data+Representation.swift in Sources */,
 				F3E6A44E287CA4680032018E /* OrzNFCReader.swift in Sources */,
 			);

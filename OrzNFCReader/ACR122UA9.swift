@@ -52,13 +52,29 @@ struct ACR122UA9 {
     static let name = "ACS ACR122U"
     
     enum Command {
+        
+        /// 获取读写器固件版本
         case firmwareVersion
+        
+        /// 获取PICC操作参数
         case piccOpParameter
+        
+        /// 设置PICC操作参数
         case setPiccOpParameter(UInt8)
+        
+        /// 设置超时参数
         case setTimeoutParameter(UInt8)
+        
+        /// 设置卡片检测期间蜂鸣器输出
         case setBuzzStatus(UInt8)
+        
+        /// 获取非接触式接口的当前设置
         case currentStatus
+        
+        /// 读取当前 LED 的状态
         case LEDStatus
+        
+        /// 设置 LED 的状态
         case setLEDStatus(uint8)
         
         var request: Data {
@@ -82,6 +98,5 @@ struct ACR122UA9 {
             }
         }
     }
-    
 }
 
