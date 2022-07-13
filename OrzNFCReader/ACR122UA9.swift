@@ -53,13 +53,22 @@ struct ACR122UA9 {
     
     enum Command {
         
-        /// 获取读写器固件版本
+        /// 获取读写器固件版本, ASCII字符串
         case firmwareVersion
         
         /// 获取PICC操作参数
+        /// PICC 操作参数(默认值 = FFh)
         case piccOpParameter
         
         /// 设置PICC操作参数
+        /// bit7 - 自动 PICC 轮询  1: 启用  0:停用
+        /// bit6 - 自动ATS生成，每次激活 ISO 14443-4 A 类标签都发送ATS请求   1: 启用  0:停用
+        /// bit5 - 轮询时间间隔  1: 250ms  0: 500ms
+        /// bit4 - FeliCa 424K   1: 检测 0:跳过
+        /// bit3 - FeliCa 212K   1: 检测 0:跳过
+        /// bit2 - Topaz             1: 检测 0:跳过
+        /// bit1 - ISO 14443 Type B  1: 检测 0:跳过
+        /// bit0 - ISO 14443 A 类，要检测 Mifare 标签，必须首先禁用自动 ATS 生成  1: 检测 0:跳过
         case setPiccOpParameter(UInt8)
         
         /// 设置超时参数
@@ -97,6 +106,11 @@ struct ACR122UA9 {
                 return Data([0xFF, 0x00, 0x40, ledStatus, 0x04, 0x00, 0x00, 0x00, 0x00])
             }
         }
+    }
+    
+    enum Status: UInt8 {
+        case success = 0x90
+        case failure = 0x63
     }
 }
 

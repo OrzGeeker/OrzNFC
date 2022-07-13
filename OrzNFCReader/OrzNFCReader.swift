@@ -105,11 +105,15 @@ extension OrzNFCReader {
             
             let success = try await card.beginSession()
             if success {
-                let request = ACR122UA9.Command.firmwareVersion.request
-                let reply = try await card.transmit(request)
-                if let firewareVersion = reply.asciiString {
+                if let firewareVersion = try await card.transmit(ACR122UA9.Command.firmwareVersion.request).asciiString {
                     print("fireware version: \(firewareVersion)")
                 }
+                let reply = try await card.transmit(ACR122UA9.Command.piccOpParameter.request)
+                if reply.first == ACR122UA9.Status.success.rawValue {
+                    print("picc op params: \(reply.dropFirst().binString)")
+                }
+                
+                
             }
             card.endSession()
         }
