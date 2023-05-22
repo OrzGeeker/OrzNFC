@@ -21,9 +21,13 @@ class OrzNFC: NSObject {
 
 extension OrzNFC {
     
+    /// 设置是否支持读取NFC标签信息
+    var canRead: Bool { NFCReaderSession.readingAvailable }
+    
+    
     func ndefScan() {
         
-        guard NFCNDEFReaderSession.readingAvailable else {
+        guard canRead else {
             return
         }
         
@@ -34,7 +38,7 @@ extension OrzNFC {
     
     func tagScan(pollingOption: NFCTagReaderSession.PollingOption = .iso14443) {
         
-        guard NFCNDEFReaderSession.readingAvailable else {
+        guard canRead else {
             return
         }
         

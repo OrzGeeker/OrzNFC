@@ -3,40 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F32C810822E3479200A9FE96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C810722E3479200A9FE96 /* AppDelegate.swift */; };
-		F32C810A22E3479200A9FE96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C810922E3479200A9FE96 /* SceneDelegate.swift */; };
-		F32C810C22E3479200A9FE96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C810B22E3479200A9FE96 /* ContentView.swift */; };
-		F32C810E22E3479600A9FE96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32C810D22E3479600A9FE96 /* Assets.xcassets */; };
-		F32C811122E3479600A9FE96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32C811022E3479600A9FE96 /* Preview Assets.xcassets */; };
-		F32C811422E3479600A9FE96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32C811222E3479600A9FE96 /* LaunchScreen.storyboard */; };
-		F32C811F22E3479600A9FE96 /* OrzNFCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C811E22E3479600A9FE96 /* OrzNFCTests.swift */; };
-		F32C812C22E355D000A9FE96 /* OrzNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C812B22E355D000A9FE96 /* OrzNFC.swift */; };
-		F32C812E22E35FEB00A9FE96 /* OrzNFC+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C812D22E35FEB00A9FE96 /* OrzNFC+Constants.swift */; };
-		F3D0CF8222E4278A00A32F76 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F3D0CF8122E4278A00A32F76 /* README.md */; };
-		F3D0CF8422E43E1400A32F76 /* OrzNFC+NDEF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */; };
-		F3D0CF8622E43E3B00A32F76 /* OrzNFC+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */; };
-		F3E6A44E287CA4680032018E /* OrzNFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A44D287CA4680032018E /* OrzNFCReader.swift */; };
-		F3E6AE28287D82DD0032018E /* ACR122UA9.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6AE27287D82DD0032018E /* ACR122UA9.swift */; };
-		F3E6AE2A287D82FD0032018E /* Data+Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6AE29287D82FD0032018E /* Data+Representation.swift */; };
-		F3E6B125287DB30F0032018E /* ACRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6B124287DB30F0032018E /* ACRError.swift */; };
+		2B30E9A02A1B14F700A2B402 /* OrzNFCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E99F2A1B14F700A2B402 /* OrzNFCApp.swift */; };
+		2B30E9A22A1B14F700A2B402 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9A12A1B14F700A2B402 /* ContentView.swift */; };
+		2B30E9A42A1B14F800A2B402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B30E9A32A1B14F800A2B402 /* Assets.xcassets */; };
+		2B30E9A82A1B14F800A2B402 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B30E9A72A1B14F800A2B402 /* Preview Assets.xcassets */; };
+		2B30E9B42A1B171D00A2B402 /* OrzNFC+NDEF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9B02A1B171D00A2B402 /* OrzNFC+NDEF.swift */; };
+		2B30E9B52A1B171D00A2B402 /* OrzNFC+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9B12A1B171D00A2B402 /* OrzNFC+Tags.swift */; };
+		2B30E9B62A1B171D00A2B402 /* OrzNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9B22A1B171D00A2B402 /* OrzNFC.swift */; };
+		2B30E9B72A1B171D00A2B402 /* OrzNFC+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9B32A1B171D00A2B402 /* OrzNFC+Constants.swift */; };
+		2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */; };
+		2B30E9C92A1B177B00A2B402 /* ACRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9C52A1B177B00A2B402 /* ACRError.swift */; };
+		2B30E9CA2A1B177B00A2B402 /* ACR122UA9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9C62A1B177B00A2B402 /* ACR122UA9.swift */; };
+		2B30E9CB2A1B177B00A2B402 /* Data+Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9C72A1B177B00A2B402 /* Data+Representation.swift */; };
+		2B30E9D02A1B28DE00A2B402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */; };
+		2B30E9D22A1B2AAE00A2B402 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F32C811B22E3479600A9FE96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F32C80FC22E3479200A9FE96 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F32C810322E3479200A9FE96;
-			remoteInfo = OrzNFC;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		F3E6A449287CA4680032018E /* CopyFiles */ = {
+		2B30E9BA2A1B175200A2B402 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -48,49 +36,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F32C810422E3479200A9FE96 /* OrzNFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzNFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F32C810722E3479200A9FE96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F32C810922E3479200A9FE96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F32C810B22E3479200A9FE96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F32C810D22E3479600A9FE96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F32C811022E3479600A9FE96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F32C811322E3479600A9FE96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F32C811522E3479600A9FE96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F32C811A22E3479600A9FE96 /* OrzNFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrzNFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F32C811E22E3479600A9FE96 /* OrzNFCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCTests.swift; sourceTree = "<group>"; };
-		F32C812022E3479600A9FE96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F32C812A22E34C2C00A9FE96 /* OrzNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrzNFC.entitlements; sourceTree = "<group>"; };
-		F32C812B22E355D000A9FE96 /* OrzNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrzNFC.swift; path = ../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC.swift; sourceTree = "<group>"; };
-		F32C812D22E35FEB00A9FE96 /* OrzNFC+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+Constants.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+Constants.swift"; sourceTree = "<group>"; };
-		F32C813022E360B600A9FE96 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
-		F3D0CF8122E4278A00A32F76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/README.md; sourceTree = "<group>"; };
-		F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+NDEF.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+NDEF.swift"; sourceTree = "<group>"; };
-		F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OrzNFC+Tags.swift"; path = "../../../../../../System/Volumes/Data/Users/joker/Documents/OrzNFC/OrzNFC/CoreNFC/OrzNFC+Tags.swift"; sourceTree = "<group>"; };
-		F3E6A44B287CA4680032018E /* OrzNFCReader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OrzNFCReader; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3E6A44D287CA4680032018E /* OrzNFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCReader.swift; sourceTree = "<group>"; };
-		F3E6A452287CA67F0032018E /* OrzNFCReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrzNFCReader.entitlements; sourceTree = "<group>"; };
-		F3E6A453287CA76C0032018E /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = DEVELOPER_DIR; };
-		F3E6AE27287D82DD0032018E /* ACR122UA9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACR122UA9.swift; sourceTree = "<group>"; };
-		F3E6AE29287D82FD0032018E /* Data+Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Representation.swift"; sourceTree = "<group>"; };
-		F3E6B124287DB30F0032018E /* ACRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACRError.swift; sourceTree = "<group>"; };
+		2B30E99C2A1B14F700A2B402 /* OrzNFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzNFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B30E99F2A1B14F700A2B402 /* OrzNFCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCApp.swift; sourceTree = "<group>"; };
+		2B30E9A12A1B14F700A2B402 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2B30E9A32A1B14F800A2B402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B30E9A52A1B14F800A2B402 /* OrzNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrzNFC.entitlements; sourceTree = "<group>"; };
+		2B30E9A72A1B14F800A2B402 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2B30E9AE2A1B170900A2B402 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2B30E9B02A1B171D00A2B402 /* OrzNFC+NDEF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrzNFC+NDEF.swift"; sourceTree = "<group>"; };
+		2B30E9B12A1B171D00A2B402 /* OrzNFC+Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrzNFC+Tags.swift"; sourceTree = "<group>"; };
+		2B30E9B22A1B171D00A2B402 /* OrzNFC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzNFC.swift; sourceTree = "<group>"; };
+		2B30E9B32A1B171D00A2B402 /* OrzNFC+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrzNFC+Constants.swift"; sourceTree = "<group>"; };
+		2B30E9BC2A1B175200A2B402 /* OrzNFCReader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OrzNFCReader; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B30E9C32A1B177B00A2B402 /* OrzNFCReader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = OrzNFCReader.entitlements; sourceTree = "<group>"; };
+		2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzNFCReader.swift; sourceTree = "<group>"; };
+		2B30E9C52A1B177B00A2B402 /* ACRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACRError.swift; sourceTree = "<group>"; };
+		2B30E9C62A1B177B00A2B402 /* ACR122UA9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACR122UA9.swift; sourceTree = "<group>"; };
+		2B30E9C72A1B177B00A2B402 /* Data+Representation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Representation.swift"; sourceTree = "<group>"; };
+		2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F32C810122E3479200A9FE96 /* Frameworks */ = {
+		2B30E9992A1B14F700A2B402 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F32C811722E3479600A9FE96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3E6A448287CA4680032018E /* Frameworks */ = {
+		2B30E9B92A1B175200A2B402 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -100,103 +75,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F32C80FB22E3479200A9FE96 = {
+		2B30E9932A1B14F700A2B402 = {
 			isa = PBXGroup;
 			children = (
-				F3D0CF8122E4278A00A32F76 /* README.md */,
-				F32C810622E3479200A9FE96 /* OrzNFC */,
-				F32C811D22E3479600A9FE96 /* OrzNFCTests */,
-				F3E6A44C287CA4680032018E /* OrzNFCReader */,
-				F32C810522E3479200A9FE96 /* Products */,
-				F32C812F22E360B600A9FE96 /* Frameworks */,
+				2B30E9AE2A1B170900A2B402 /* README.md */,
+				2B30E99E2A1B14F700A2B402 /* OrzNFC */,
+				2B30E9BD2A1B175200A2B402 /* OrzNFCReader */,
+				2B30E99D2A1B14F700A2B402 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F32C810522E3479200A9FE96 /* Products */ = {
+		2B30E99D2A1B14F700A2B402 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F32C810422E3479200A9FE96 /* OrzNFC.app */,
-				F32C811A22E3479600A9FE96 /* OrzNFCTests.xctest */,
-				F3E6A44B287CA4680032018E /* OrzNFCReader */,
+				2B30E99C2A1B14F700A2B402 /* OrzNFC.app */,
+				2B30E9BC2A1B175200A2B402 /* OrzNFCReader */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F32C810622E3479200A9FE96 /* OrzNFC */ = {
+		2B30E99E2A1B14F700A2B402 /* OrzNFC */ = {
 			isa = PBXGroup;
 			children = (
-				F32C812A22E34C2C00A9FE96 /* OrzNFC.entitlements */,
-				F32C812922E3487D00A9FE96 /* CoreNFC */,
-				F32C810722E3479200A9FE96 /* AppDelegate.swift */,
-				F32C810922E3479200A9FE96 /* SceneDelegate.swift */,
-				F32C810B22E3479200A9FE96 /* ContentView.swift */,
-				F32C810D22E3479600A9FE96 /* Assets.xcassets */,
-				F32C811222E3479600A9FE96 /* LaunchScreen.storyboard */,
-				F32C811522E3479600A9FE96 /* Info.plist */,
-				F32C810F22E3479600A9FE96 /* Preview Content */,
+				2B30E9CE2A1B187C00A2B402 /* App */,
+				2B30E9AF2A1B171D00A2B402 /* CoreNFC */,
+				2B30E9A62A1B14F800A2B402 /* Preview Content */,
 			);
 			path = OrzNFC;
 			sourceTree = "<group>";
 		};
-		F32C810F22E3479600A9FE96 /* Preview Content */ = {
+		2B30E9A62A1B14F800A2B402 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				F32C811022E3479600A9FE96 /* Preview Assets.xcassets */,
+				2B30E9A72A1B14F800A2B402 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F32C811D22E3479600A9FE96 /* OrzNFCTests */ = {
+		2B30E9AF2A1B171D00A2B402 /* CoreNFC */ = {
 			isa = PBXGroup;
 			children = (
-				F32C811E22E3479600A9FE96 /* OrzNFCTests.swift */,
-				F32C812022E3479600A9FE96 /* Info.plist */,
-			);
-			path = OrzNFCTests;
-			sourceTree = "<group>";
-		};
-		F32C812922E3487D00A9FE96 /* CoreNFC */ = {
-			isa = PBXGroup;
-			children = (
-				F32C812B22E355D000A9FE96 /* OrzNFC.swift */,
-				F3D0CF8522E43E3B00A32F76 /* OrzNFC+Tags.swift */,
-				F3D0CF8322E43E1400A32F76 /* OrzNFC+NDEF.swift */,
-				F32C812D22E35FEB00A9FE96 /* OrzNFC+Constants.swift */,
+				2B30E9B02A1B171D00A2B402 /* OrzNFC+NDEF.swift */,
+				2B30E9B12A1B171D00A2B402 /* OrzNFC+Tags.swift */,
+				2B30E9B22A1B171D00A2B402 /* OrzNFC.swift */,
+				2B30E9B32A1B171D00A2B402 /* OrzNFC+Constants.swift */,
 			);
 			path = CoreNFC;
 			sourceTree = "<group>";
 		};
-		F32C812F22E360B600A9FE96 /* Frameworks */ = {
+		2B30E9BD2A1B175200A2B402 /* OrzNFCReader */ = {
 			isa = PBXGroup;
 			children = (
-				F3E6A453287CA76C0032018E /* CryptoTokenKit.framework */,
-				F32C813022E360B600A9FE96 /* CoreNFC.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F3E6A44C287CA4680032018E /* OrzNFCReader */ = {
-			isa = PBXGroup;
-			children = (
-				F3E6A452287CA67F0032018E /* OrzNFCReader.entitlements */,
-				F3E6A44D287CA4680032018E /* OrzNFCReader.swift */,
-				F3E6AE27287D82DD0032018E /* ACR122UA9.swift */,
-				F3E6B124287DB30F0032018E /* ACRError.swift */,
-				F3E6AE29287D82FD0032018E /* Data+Representation.swift */,
+				2B30E9CC2A1B185F00A2B402 /* App */,
+				2B30E9CD2A1B186500A2B402 /* Utils */,
 			);
 			path = OrzNFCReader;
+			sourceTree = "<group>";
+		};
+		2B30E9CC2A1B185F00A2B402 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2B30E9C32A1B177B00A2B402 /* OrzNFCReader.entitlements */,
+				2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2B30E9CD2A1B186500A2B402 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B30E9C62A1B177B00A2B402 /* ACR122UA9.swift */,
+				2B30E9C52A1B177B00A2B402 /* ACRError.swift */,
+				2B30E9C72A1B177B00A2B402 /* Data+Representation.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2B30E9CE2A1B187C00A2B402 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */,
+				2B30E99F2A1B14F700A2B402 /* OrzNFCApp.swift */,
+				2B30E9A12A1B14F700A2B402 /* ContentView.swift */,
+				2B30E9A32A1B14F800A2B402 /* Assets.xcassets */,
+				2B30E9A52A1B14F800A2B402 /* OrzNFC.entitlements */,
+				2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F32C810322E3479200A9FE96 /* OrzNFC */ = {
+		2B30E99B2A1B14F700A2B402 /* OrzNFC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F32C812322E3479600A9FE96 /* Build configuration list for PBXNativeTarget "OrzNFC" */;
+			buildConfigurationList = 2B30E9AB2A1B14F800A2B402 /* Build configuration list for PBXNativeTarget "OrzNFC" */;
 			buildPhases = (
-				F32C810022E3479200A9FE96 /* Sources */,
-				F32C810122E3479200A9FE96 /* Frameworks */,
-				F32C810222E3479200A9FE96 /* Resources */,
+				2B30E9982A1B14F700A2B402 /* Sources */,
+				2B30E9992A1B14F700A2B402 /* Frameworks */,
+				2B30E99A2A1B14F700A2B402 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -204,34 +181,16 @@
 			);
 			name = OrzNFC;
 			productName = OrzNFC;
-			productReference = F32C810422E3479200A9FE96 /* OrzNFC.app */;
+			productReference = 2B30E99C2A1B14F700A2B402 /* OrzNFC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F32C811922E3479600A9FE96 /* OrzNFCTests */ = {
+		2B30E9BB2A1B175200A2B402 /* OrzNFCReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F32C812622E3479600A9FE96 /* Build configuration list for PBXNativeTarget "OrzNFCTests" */;
+			buildConfigurationList = 2B30E9C02A1B175200A2B402 /* Build configuration list for PBXNativeTarget "OrzNFCReader" */;
 			buildPhases = (
-				F32C811622E3479600A9FE96 /* Sources */,
-				F32C811722E3479600A9FE96 /* Frameworks */,
-				F32C811822E3479600A9FE96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F32C811C22E3479600A9FE96 /* PBXTargetDependency */,
-			);
-			name = OrzNFCTests;
-			productName = OrzNFCTests;
-			productReference = F32C811A22E3479600A9FE96 /* OrzNFCTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F3E6A44A287CA4680032018E /* OrzNFCReader */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3E6A451287CA4680032018E /* Build configuration list for PBXNativeTarget "OrzNFCReader" */;
-			buildPhases = (
-				F3E6A447287CA4680032018E /* Sources */,
-				F3E6A448287CA4680032018E /* Frameworks */,
-				F3E6A449287CA4680032018E /* CopyFiles */,
+				2B30E9B82A1B175200A2B402 /* Sources */,
+				2B30E9B92A1B175200A2B402 /* Frameworks */,
+				2B30E9BA2A1B175200A2B402 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -239,136 +198,95 @@
 			);
 			name = OrzNFCReader;
 			productName = OrzNFCReader;
-			productReference = F3E6A44B287CA4680032018E /* OrzNFCReader */;
+			productReference = 2B30E9BC2A1B175200A2B402 /* OrzNFCReader */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F32C80FC22E3479200A9FE96 /* Project object */ = {
+		2B30E9942A1B14F700A2B402 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1100;
-				ORGANIZATIONNAME = joker;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					F32C810322E3479200A9FE96 = {
-						CreatedOnToolsVersion = 11.0;
+					2B30E99B2A1B14F700A2B402 = {
+						CreatedOnToolsVersion = 14.2;
 					};
-					F32C811922E3479600A9FE96 = {
-						CreatedOnToolsVersion = 11.0;
-						TestTargetID = F32C810322E3479200A9FE96;
-					};
-					F3E6A44A287CA4680032018E = {
-						CreatedOnToolsVersion = 13.4.1;
+					2B30E9BB2A1B175200A2B402 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = F32C80FF22E3479200A9FE96 /* Build configuration list for PBXProject "OrzNFC" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 2B30E9972A1B14F700A2B402 /* Build configuration list for PBXProject "OrzNFC" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = F32C80FB22E3479200A9FE96;
-			productRefGroup = F32C810522E3479200A9FE96 /* Products */;
+			mainGroup = 2B30E9932A1B14F700A2B402;
+			productRefGroup = 2B30E99D2A1B14F700A2B402 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F32C810322E3479200A9FE96 /* OrzNFC */,
-				F32C811922E3479600A9FE96 /* OrzNFCTests */,
-				F3E6A44A287CA4680032018E /* OrzNFCReader */,
+				2B30E99B2A1B14F700A2B402 /* OrzNFC */,
+				2B30E9BB2A1B175200A2B402 /* OrzNFCReader */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F32C810222E3479200A9FE96 /* Resources */ = {
+		2B30E99A2A1B14F700A2B402 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32C811422E3479600A9FE96 /* LaunchScreen.storyboard in Resources */,
-				F32C811122E3479600A9FE96 /* Preview Assets.xcassets in Resources */,
-				F3D0CF8222E4278A00A32F76 /* README.md in Resources */,
-				F32C810E22E3479600A9FE96 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F32C811822E3479600A9FE96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2B30E9A82A1B14F800A2B402 /* Preview Assets.xcassets in Resources */,
+				2B30E9A42A1B14F800A2B402 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F32C810022E3479200A9FE96 /* Sources */ = {
+		2B30E9982A1B14F700A2B402 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3D0CF8422E43E1400A32F76 /* OrzNFC+NDEF.swift in Sources */,
-				F32C810822E3479200A9FE96 /* AppDelegate.swift in Sources */,
-				F3D0CF8622E43E3B00A32F76 /* OrzNFC+Tags.swift in Sources */,
-				F32C812E22E35FEB00A9FE96 /* OrzNFC+Constants.swift in Sources */,
-				F32C812C22E355D000A9FE96 /* OrzNFC.swift in Sources */,
-				F32C810A22E3479200A9FE96 /* SceneDelegate.swift in Sources */,
-				F32C810C22E3479200A9FE96 /* ContentView.swift in Sources */,
+				2B30E9B52A1B171D00A2B402 /* OrzNFC+Tags.swift in Sources */,
+				2B30E9B42A1B171D00A2B402 /* OrzNFC+NDEF.swift in Sources */,
+				2B30E9B62A1B171D00A2B402 /* OrzNFC.swift in Sources */,
+				2B30E9D22A1B2AAE00A2B402 /* AppModel.swift in Sources */,
+				2B30E9B72A1B171D00A2B402 /* OrzNFC+Constants.swift in Sources */,
+				2B30E9D02A1B28DE00A2B402 /* AppDelegate.swift in Sources */,
+				2B30E9A22A1B14F700A2B402 /* ContentView.swift in Sources */,
+				2B30E9A02A1B14F700A2B402 /* OrzNFCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F32C811622E3479600A9FE96 /* Sources */ = {
+		2B30E9B82A1B175200A2B402 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32C811F22E3479600A9FE96 /* OrzNFCTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3E6A447287CA4680032018E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3E6AE28287D82DD0032018E /* ACR122UA9.swift in Sources */,
-				F3E6B125287DB30F0032018E /* ACRError.swift in Sources */,
-				F3E6AE2A287D82FD0032018E /* Data+Representation.swift in Sources */,
-				F3E6A44E287CA4680032018E /* OrzNFCReader.swift in Sources */,
+				2B30E9CB2A1B177B00A2B402 /* Data+Representation.swift in Sources */,
+				2B30E9CA2A1B177B00A2B402 /* ACR122UA9.swift in Sources */,
+				2B30E9C92A1B177B00A2B402 /* ACRError.swift in Sources */,
+				2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		F32C811C22E3479600A9FE96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F32C810322E3479200A9FE96 /* OrzNFC */;
-			targetProxy = F32C811B22E3479600A9FE96 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F32C811222E3479600A9FE96 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F32C811322E3479600A9FE96 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		F32C812122E3479600A9FE96 /* Debug */ = {
+		2B30E9A92A1B14F800A2B402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -387,6 +305,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -394,7 +313,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -411,24 +329,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		F32C812222E3479600A9FE96 /* Release */ = {
+		2B30E9AA2A1B14F800A2B402 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -447,6 +361,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -454,7 +369,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -465,126 +379,100 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		F32C812422E3479600A9FE96 /* Debug */ = {
+		2B30E9AC2A1B14F800A2B402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = OrzNFC/OrzNFC.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OrzNFC/App/OrzNFC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "OrzNFC/Preview\\ Content";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OrzNFC/Preview Content\"";
 				DEVELOPMENT_TEAM = 2N62934Y28;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = OrzNFC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC Tags";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F32C812522E3479600A9FE96 /* Release */ = {
+		2B30E9AD2A1B14F800A2B402 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = OrzNFC/OrzNFC.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OrzNFC/App/OrzNFC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "OrzNFC/Preview\\ Content";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OrzNFC/Preview Content\"";
 				DEVELOPMENT_TEAM = 2N62934Y28;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = OrzNFC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC Tags";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		F32C812722E3479600A9FE96 /* Debug */ = {
+		2B30E9C12A1B175200A2B402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2N62934Y28;
-				INFOPLIST_FILE = OrzNFCTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzNFCTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrzNFC.app/OrzNFC";
-			};
-			name = Debug;
-		};
-		F32C812822E3479600A9FE96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2N62934Y28;
-				INFOPLIST_FILE = OrzNFCTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzNFCTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrzNFC.app/OrzNFC";
-			};
-			name = Release;
-		};
-		F3E6A44F287CA4680032018E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = OrzNFCReader/OrzNFCReader.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2N62934Y28;
-				ENABLE_HARDENED_RUNTIME = NO;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		F3E6A450287CA4680032018E /* Release */ = {
+		2B30E9C22A1B175200A2B402 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = OrzNFCReader/OrzNFCReader.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2N62934Y28;
-				ENABLE_HARDENED_RUNTIME = NO;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -594,43 +482,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F32C80FF22E3479200A9FE96 /* Build configuration list for PBXProject "OrzNFC" */ = {
+		2B30E9972A1B14F700A2B402 /* Build configuration list for PBXProject "OrzNFC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F32C812122E3479600A9FE96 /* Debug */,
-				F32C812222E3479600A9FE96 /* Release */,
+				2B30E9A92A1B14F800A2B402 /* Debug */,
+				2B30E9AA2A1B14F800A2B402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F32C812322E3479600A9FE96 /* Build configuration list for PBXNativeTarget "OrzNFC" */ = {
+		2B30E9AB2A1B14F800A2B402 /* Build configuration list for PBXNativeTarget "OrzNFC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F32C812422E3479600A9FE96 /* Debug */,
-				F32C812522E3479600A9FE96 /* Release */,
+				2B30E9AC2A1B14F800A2B402 /* Debug */,
+				2B30E9AD2A1B14F800A2B402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F32C812622E3479600A9FE96 /* Build configuration list for PBXNativeTarget "OrzNFCTests" */ = {
+		2B30E9C02A1B175200A2B402 /* Build configuration list for PBXNativeTarget "OrzNFCReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F32C812722E3479600A9FE96 /* Debug */,
-				F32C812822E3479600A9FE96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3E6A451287CA4680032018E /* Build configuration list for PBXNativeTarget "OrzNFCReader" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3E6A44F287CA4680032018E /* Debug */,
-				F3E6A450287CA4680032018E /* Release */,
+				2B30E9C12A1B175200A2B402 /* Debug */,
+				2B30E9C22A1B175200A2B402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F32C80FC22E3479200A9FE96 /* Project object */;
+	rootObject = 2B30E9942A1B14F700A2B402 /* Project object */;
 }
