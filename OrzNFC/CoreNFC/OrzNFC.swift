@@ -9,10 +9,6 @@
 import CoreNFC
 
 class OrzNFC: NSObject {
-
-    static let `default` = OrzNFC()
-
-    private override init() {}
     
     private var ndefReaderSession: NFCNDEFReaderSession?
     

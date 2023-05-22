@@ -15,10 +15,7 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         if let readerError = error as? NFCReaderError {
-            if (readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead)
-                && (readerError.code != .readerSessionInvalidationErrorUserCanceled) {
-                print(readerError.localizedDescription)
-            }
+            readerError.localizedDescription.printDebugInfo()
         }
     }
     
@@ -71,10 +68,10 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
                         })
                     }
                     
-//                    tag.readNDEF { (message: NFCNDEFMessage?, error: Error?) in
-//                        print(message)
-//                        session.invalidate()
-//                    }
+                    //                    tag.readNDEF { (message: NFCNDEFMessage?, error: Error?) in
+                    //                        print(message)
+                    //                        session.invalidate()
+                    //                    }
                 @unknown default:
                     session.alertMessage = AlertMessage.ndefUnknownStatus
                     session.invalidate()

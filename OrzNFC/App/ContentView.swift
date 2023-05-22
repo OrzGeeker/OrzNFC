@@ -15,14 +15,23 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Start Scan NDEF", action: AppModel.startScanNDEF)
-            Button("Start Scan Tags", action: AppModel.startScanTags)
+            if AppModel.canRead() {
+                Button("Start Scan NDEF", action: AppModel.startScanNDEF)
+                Button("Start Scan Tags", action: AppModel.startScanTags)
+            } else {
+                VStack {
+                    Image(systemName: "antenna.radiowaves.left.and.right.slash")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Text("NFC Unavailable")
+                        .bold()
+                        .font(.title)
+                }
+                .offset(y: -30)
+            }
         }
         .buttonStyle(.bordered)
-        .padding()
-        .alert(isPresented: $appModel.showAlert) {
-            Alert(title: Text(appModel.alertMessage))
-        }
+
     }
 }
 

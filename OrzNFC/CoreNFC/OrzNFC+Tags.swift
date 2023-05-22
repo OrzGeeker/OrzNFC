@@ -15,7 +15,9 @@ extension OrzNFC: NFCTagReaderSessionDelegate {
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
-        error.localizedDescription.printDebugInfo()
+        if let readerError = error as? NFCReaderError {
+            readerError.localizedDescription.printDebugInfo()
+        }
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {

@@ -9,6 +9,8 @@ import Foundation
 
 class AppModel: ObservableObject {
     
+    let appName: String = Bundle.main.infoDictionary?["CFBundleName"] as! String
+    
     @Published var showAlert: Bool = false
     var alertMessage: String = "" {
         didSet {
@@ -16,7 +18,7 @@ class AppModel: ObservableObject {
         }
     }
     
-    static private let nfc = OrzNFC.default
+    static private let nfc = OrzNFC()
 }
 
 extension AppModel {
@@ -30,4 +32,5 @@ extension AppModel {
         nfc.tagScan()
     }
 
+    static func canRead() -> Bool { nfc.canRead }
 }
