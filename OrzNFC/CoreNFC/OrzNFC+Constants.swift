@@ -21,7 +21,13 @@ extension OrzNFC {
         static let ndefUnknownStatus = "Unknown NDEF tag status."
         static let ndefWriteFailed  = "Write NDEF message failed."
         static let ndefWriteSuccessed = "Write NDEF message successful."
-        
-        
+    }
+}
+
+extension String {
+    func printDebugInfo() {
+#if DEBUG
+        print("[DEBUG] \(self)")
+#endif
     }
 }

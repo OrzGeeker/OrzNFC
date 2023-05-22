@@ -35,14 +35,14 @@ extension OrzNFC {
         ndefReaderSession?.alertMessage = AlertMessage.ndefAlert
         ndefReaderSession?.begin()
     }
-    
-    func tagScan(pollingOption: NFCTagReaderSession.PollingOption = .iso14443) {
+        
+    func tagScan() {
         
         guard canRead else {
             return
         }
         
-        tagReaderSession = NFCTagReaderSession(pollingOption: pollingOption, delegate: self, queue: nil)
+        tagReaderSession = NFCTagReaderSession(pollingOption: [.iso14443, .iso18092, .iso15693, .pace], delegate: self, queue: nil)
         tagReaderSession?.alertMessage = AlertMessage.tagAlert
         tagReaderSession?.begin()
     }

@@ -16,11 +16,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Start Scan NDEF", action: AppModel.startScanNDEF)
-                .buttonStyle(.bordered)
-            
             Button("Start Scan Tags", action: AppModel.startScanTags)
-                .buttonStyle(.bordered)
         }
+        .buttonStyle(.bordered)
         .padding()
         .alert(isPresented: $appModel.showAlert) {
             Alert(title: Text(appModel.alertMessage))

@@ -10,14 +10,15 @@ import CoreNFC
 
 extension OrzNFC: NFCTagReaderSessionDelegate {
         
-    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
-        _ = tags.map{ print($0) }
+    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+        "Tag Reader Session Become Active".printDebugInfo()
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
-        print(error.localizedDescription)
+        error.localizedDescription.printDebugInfo()
     }
-
-    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+    
+    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
+        _ = tags.map{ print($0) }
     }
 }

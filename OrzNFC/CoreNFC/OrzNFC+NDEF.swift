@@ -10,6 +10,7 @@ import CoreNFC
 
 extension OrzNFC: NFCNDEFReaderSessionDelegate {
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
+        "ndef reader session become active".printDebugInfo()
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
