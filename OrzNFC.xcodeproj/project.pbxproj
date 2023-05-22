@@ -55,7 +55,6 @@
 		2B30E9C72A1B177B00A2B402 /* Data+Representation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Representation.swift"; sourceTree = "<group>"; };
 		2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
-		2B30E9D32A1B37EF00A2B402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +97,6 @@
 		2B30E99E2A1B14F700A2B402 /* OrzNFC */ = {
 			isa = PBXGroup;
 			children = (
-				2B30E9D32A1B37EF00A2B402 /* Info.plist */,
 				2B30E9CE2A1B187C00A2B402 /* App */,
 				2B30E9AF2A1B171D00A2B402 /* CoreNFC */,
 				2B30E9A62A1B14F800A2B402 /* Preview Content */,
