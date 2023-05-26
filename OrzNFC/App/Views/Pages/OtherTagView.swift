@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OtherTagView: View {
     var body: some View {
-        Button("Start Scan Tags", action: AppModel.startScanTags)
+        Text("Other Tags")
     }
 }
 

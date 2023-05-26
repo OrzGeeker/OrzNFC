@@ -9,20 +9,16 @@ import SwiftUI
 
 @main
 struct OrzNFCApp: App {
-    let appName: String = (Bundle.main.infoDictionary?["CFBundleName"] as? String) ?? ""
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
     @StateObject private var model = AppModel()
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                ContentView()
-                    .environmentObject(model)
-                    .alert(isPresented: $model.showAlert) {
-                        Alert(title: Text(model.alertMessage))
-                    }
-                    .ignoresSafeArea()
-                    .navigationTitle(appName)
-            }
+            ContentView()
+                .environmentObject(model)
+                .alert(isPresented: $model.showAlert) {
+                    Alert(title: Text(model.alertMessage))
+                }
+                .ignoresSafeArea()
         }
     }
 }

@@ -14,9 +14,7 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        if let readerError = error as? NFCReaderError {
-            readerError.localizedDescription.printDebugInfo()
-        }
+        session.invalidate(errorMessage: error.localizedDescription)
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
@@ -24,6 +22,7 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
+
         if tags.count > 1 {
             let retryInterval = DispatchTimeInterval.milliseconds(500)
             session.alertMessage = AlertMessage.tagMoreThanOneFound
@@ -33,8 +32,14 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
             return
         }
         
-        let tag = tags.first!
+        guard let tag = tags.first, let action = action
+        else {
+            session.invalidate()
+            return
+        }
+
         session.connect(to: tag, completionHandler: { (error: Error?) in
+
             if nil != error {
                 session.alertMessage = AlertMessage.tagUnableConnect
                 session.invalidate()
@@ -42,42 +47,80 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
             }
             
             tag.queryNDEFStatus(completionHandler: { (ndefStatus: NFCNDEFStatus, capacity: Int, error: Error?) in
-                guard error == nil else {
-                    session.alertMessage = AlertMessage.ndefQueryFailed
-                    session.invalidate()
+
+                guard error == nil
+                else {
+                    session.invalidate(errorMessage: AlertMessage.ndefQueryFailed)
                     return
                 }
-                print("capacity: \(capacity)")
-                switch ndefStatus {
-                case .notSupported:
-                    session.alertMessage = AlertMessage.ndefNotCompliant
-                    session.invalidate()
-                case .readOnly:
-                    session.alertMessage = AlertMessage.tagReadOnly
-                    session.invalidate()
-                case .readWrite:
-                    if let payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: "https://www.baidu.com") {
-                        let message: NFCNDEFMessage = .init(records: [payload])
-                        tag.writeNDEF(message, completionHandler: { (error: Error?) in
-                            if nil != error {
-                                session.invalidate(errorMessage: "\(error!)")
-                            } else {
-                                session.alertMessage = AlertMessage.ndefWriteSuccessed
-                                session.invalidate()
-                            }
-                        })
-                    }
-                    
-                    //                    tag.readNDEF { (message: NFCNDEFMessage?, error: Error?) in
-                    //                        print(message)
-                    //                        session.invalidate()
-                    //                    }
-                @unknown default:
-                    session.alertMessage = AlertMessage.ndefUnknownStatus
-                    session.invalidate()
-                }
+
+                self.process(tag: tag, of: session, status: ndefStatus, capacity: capacity, action: action)
             })
         })
         
+    }
+}
+
+extension OrzNFC {
+
+    func process(tag: NFCNDEFTag, of session: NFCNDEFReaderSession, status: NFCNDEFStatus, capacity: Int, action: ActionType) {
+        var readable: Bool = false
+        var writeable: Bool = false
+
+        switch status {
+        case .notSupported:
+            session.invalidate(errorMessage: AlertMessage.ndefNotCompliant)
+        case .readOnly:
+            readable = true
+        case .readWrite:
+            readable = true
+            writeable = true
+        @unknown default:
+            session.invalidate(errorMessage: AlertMessage.ndefUnknownStatus)
+            return
+        }
+
+        switch action {
+        case .read:
+            guard readable else {
+                session.invalidate(errorMessage: AlertMessage.ndefReadUnable)
+                return
+            }
+            readNDEF(tag: tag, session: session)
+        case .write:
+            guard writeable else {
+                session.invalidate(errorMessage: AlertMessage.ndefWriteUnable)
+                return
+            }
+            writeNDEF(tag: tag, session: session, capacity: capacity)
+        }
+    }
+
+    func readNDEF(tag: NFCNDEFTag, session: NFCNDEFReaderSession) {
+        tag.readNDEF { (message: NFCNDEFMessage?, error: Error?) in
+            guard error == nil, let message = message else {
+                session.invalidate(errorMessage: AlertMessage.ndefReadFailed)
+                return
+            }
+            self.ndefMessageSubject.send(message)
+
+            session.alertMessage = AlertMessage.ndefReadSuccessed
+            session.invalidate()
+        }
+    }
+
+    func writeNDEF(tag: NFCNDEFTag, session: NFCNDEFReaderSession, capacity: Int) {
+        if let uri = NFCNDEFPayload.wellKnownTypeURIPayload(string: "https://www.baidu.com"),
+            let text = NFCNDEFPayload.wellKnownTypeTextPayload(string: "text payload", locale: .current) {
+            let message: NFCNDEFMessage = .init(records: [text, uri])
+            tag.writeNDEF(message, completionHandler: { (error: Error?) in
+                guard error == nil else {
+                    session.invalidate(errorMessage: "\(error!)")
+                    return
+                }
+                session.alertMessage = AlertMessage.ndefWriteSuccessed
+                session.invalidate()
+            })
+        }
     }
 }

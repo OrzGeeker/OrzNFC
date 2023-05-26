@@ -7,12 +7,17 @@
 //
 
 import CoreNFC
+import Combine
 
 class OrzNFC: NSObject {
     
     private var ndefReaderSession: NFCNDEFReaderSession?
     
     private var tagReaderSession: NFCTagReaderSession?
+
+    var action: ActionType?
+
+    let ndefMessageSubject = PassthroughSubject<NFCNDEFMessage, Never>()
 }
 
 extension OrzNFC {
