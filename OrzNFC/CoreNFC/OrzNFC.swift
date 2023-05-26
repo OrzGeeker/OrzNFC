@@ -18,6 +18,8 @@ class OrzNFC: NSObject {
     var action: ActionType?
 
     let ndefMessageSubject = PassthroughSubject<NFCNDEFMessage, Never>()
+
+    var ndefMessageToBeWrite: NFCNDEFMessage?
 }
 
 extension OrzNFC {

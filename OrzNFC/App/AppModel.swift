@@ -46,7 +46,12 @@ extension AppModel {
     static func startAction(on tabPage: TabPageID, actionType: ActionType) {
 
         nfc.action = actionType
-        
+
+        nfc.ndefMessageToBeWrite = NFCNDEFMessage(records: [
+            .wellKnownTypeTextPayload(string: "Text Payload", locale: .current)!,
+            .wellKnownTypeURIPayload(string: "https://www.baidu.com")!
+        ])
+
         switch tabPage {
         case .ndef:
             nfc.ndefScan()

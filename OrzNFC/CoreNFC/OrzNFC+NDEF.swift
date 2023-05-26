@@ -110,9 +110,7 @@ extension OrzNFC {
     }
 
     func writeNDEF(tag: NFCNDEFTag, session: NFCNDEFReaderSession, capacity: Int) {
-        if let uri = NFCNDEFPayload.wellKnownTypeURIPayload(string: "https://www.baidu.com"),
-            let text = NFCNDEFPayload.wellKnownTypeTextPayload(string: "text payload", locale: .current) {
-            let message: NFCNDEFMessage = .init(records: [text, uri])
+        if let message = ndefMessageToBeWrite {
             tag.writeNDEF(message, completionHandler: { (error: Error?) in
                 guard error == nil else {
                     session.invalidate(errorMessage: "\(error!)")
