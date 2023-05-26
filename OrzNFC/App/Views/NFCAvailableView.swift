@@ -29,13 +29,15 @@ struct NFCAvailableView: View {
         }
         .overlay(alignment: .center, content: {
             ZStack {
+                let size: CGFloat = 80
+                let iconSize = 0.7 * size
                 Circle()
                     .fill(.green)
-                    .frame(width: 100, height: 100)
+                    .frame(width: size, height: size)
                 Image(systemName: "iphone.gen2.radiowaves.left.and.right")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
+                    .frame(width: iconSize, height: iconSize)
             }
             .onTapGesture {
                 AppModel.startAction(on: selectedTab, actionType: actionType)
