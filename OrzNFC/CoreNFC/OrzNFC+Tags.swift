@@ -21,6 +21,6 @@ extension OrzNFC: NFCTagReaderSessionDelegate {
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
-        _ = tags.map{ print($0) }
+        _ = tags.map { print($0) }
     }
 }

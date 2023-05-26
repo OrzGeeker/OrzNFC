@@ -43,4 +43,3 @@ extension OrzNFC {
         tagReaderSession?.begin()
     }
 }
-

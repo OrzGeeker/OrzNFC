@@ -21,7 +21,7 @@ struct OrzNFCReader {
     }()
     
     /// 监听是否有读卡器插拔事件
-    private static var slotPublisherCancellable : Cancellable?
+    private static var slotPublisherCancellable: Cancellable?
     
     /// 读卡器名称
     private static let cardReaderName = ACR122UA9.name
@@ -61,23 +61,23 @@ struct OrzNFCReader {
                     .filter { $0 != .probing }
                     .removeDuplicates()
                     .sink { state in
-                    switch state {
-                    case .missing:
-                        print("读卡器被拔掉了")
-                    case .empty:
-                        print("没有放上智能卡")
-                    case .muteCard:
-                        print("智能卡无响应命令")
-                    case .probing:
-                        print("正在探测智能卡")
-                    case .validCard:
-                        print("智能卡准备就绪")
-                        dumpCardInfo()
-                        processCard()
-                    @unknown default:
-                        fatalError("读卡器未知状态")
+                        switch state {
+                        case .missing:
+                            print("读卡器被拔掉了")
+                        case .empty:
+                            print("没有放上智能卡")
+                        case .muteCard:
+                            print("智能卡无响应命令")
+                        case .probing:
+                            print("正在探测智能卡")
+                        case .validCard:
+                            print("智能卡准备就绪")
+                            dumpCardInfo()
+                            processCard()
+                        @unknown default:
+                            fatalError("读卡器未知状态")
+                        }
                     }
-                }
             }
         }
         
@@ -89,7 +89,8 @@ extension OrzNFCReader {
     
     /// 打印读卡器相关信息
     static func dumpCardInfo() {
-        if let name = cardReaderSlot?.name, let atrHexString = cardReaderSlot?.atr?.bytes.hexString, let maxInputLength = cardReaderSlot?.maxInputLength, let maxOutputLength = cardReaderSlot?.maxOutputLength {
+        if let name = cardReaderSlot?.name, let atrHexString = cardReaderSlot?.atr?.bytes.hexString,
+            let maxInputLength = cardReaderSlot?.maxInputLength, let maxOutputLength = cardReaderSlot?.maxOutputLength {
             print("Reader: \(name)")
             print("Card ATR: \(atrHexString)")
             print("APDU MaxInputLength(Reader -> Card): \(maxInputLength)")

@@ -60,7 +60,7 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
                         let message: NFCNDEFMessage = .init(records: [payload])
                         tag.writeNDEF(message, completionHandler: { (error: Error?) in
                             if nil != error {
-                                session.invalidate(errorMessage:"\(error!)")
+                                session.invalidate(errorMessage: "\(error!)")
                             } else {
                                 session.alertMessage = AlertMessage.ndefWriteSuccessed
                                 session.invalidate()

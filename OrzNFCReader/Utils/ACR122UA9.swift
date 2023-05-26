@@ -99,7 +99,7 @@ struct ACR122UA9 {
             case .setBuzzStatus(let pollBuzzStatus):
                 return Data([0xFF, 0x00, 0x52, pollBuzzStatus, 0x00])
             case .currentStatus:
-                return Data([0xFF, 0x00, 0x00, 0x00, 0x02, 0xD4,0x04])
+                return Data([0xFF, 0x00, 0x00, 0x00, 0x02, 0xD4, 0x04])
             case .LEDStatus:
                 return Data([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])
             case .setLEDStatus(let ledStatus):
@@ -113,4 +113,3 @@ struct ACR122UA9 {
         case failure = 0x63
     }
 }
-
