@@ -81,11 +81,6 @@ struct ACR122UA9 {
         /// 0xFF - 一直等待，超时时长无限
         case setTimeoutParameter(UInt8)
         
-        /// 设置卡片检测期间蜂鸣器输出，默认打开
-        /// 0x00 - 关闭蜂鸣器
-        /// 0xFF - 打开蜂鸣器
-        case setBuzzStatus(UInt8)
-        
         /// 获取非接触式接口的当前设置
         case currentStatus
         
@@ -94,6 +89,12 @@ struct ACR122UA9 {
         
         /// 设置 LED 的状态
         case setLEDStatus(uint8)
+        
+        /// 设置卡片检测期间蜂鸣器输出，默认打开
+        /// 0x00 - 关闭蜂鸣器
+        /// 0xFF - 打开蜂鸣器
+        case setBuzzStatus(UInt8)
+        
         
         var request: Data {
             switch self {
