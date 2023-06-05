@@ -65,6 +65,14 @@
 		2B7981812A206FAF00DF795A /* OtherTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTagView.swift; sourceTree = "<group>"; };
 		2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCUnavailableView.swift; sourceTree = "<group>"; };
 		2B7981852A20716100DF795A /* NFCAvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCAvailableView.swift; sourceTree = "<group>"; };
+		2BCF34072A2D82E3007FDA02 /* API-ACR122U-2.04.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "API-ACR122U-2.04.pdf"; sourceTree = "<group>"; };
+		2BCF34082A2D82E3007FDA02 /* TSP-ACR122U-3.06.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TSP-ACR122U-3.06.pdf"; sourceTree = "<group>"; };
+		2BCF340A2A2D82E3007FDA02 /* Simple NDEF Exchange Protocol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Simple NDEF Exchange Protocol.pdf"; sourceTree = "<group>"; };
+		2BCF340B2A2D82E3007FDA02 /* NFC Data Exchange Format (NDEF).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "NFC Data Exchange Format (NDEF).pdf"; sourceTree = "<group>"; };
+		2BCF340C2A2D82E3007FDA02 /* Text Record Type Definition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Text Record Type Definition.pdf"; sourceTree = "<group>"; };
+		2BCF340D2A2D82E3007FDA02 /* Smart Poster Record Type Definition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Smart Poster Record Type Definition.pdf"; sourceTree = "<group>"; };
+		2BCF340E2A2D82E3007FDA02 /* URI Record Type Definition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "URI Record Type Definition.pdf"; sourceTree = "<group>"; };
+		2BCF340F2A2D82E3007FDA02 /* NFC Record Type Definition (RTD).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "NFC Record Type Definition (RTD).pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				2B30E9AE2A1B170900A2B402 /* README.md */,
+				2BCF34052A2D82E3007FDA02 /* docs */,
 				2B30E99E2A1B14F700A2B402 /* OrzNFC */,
 				2B30E9BD2A1B175200A2B402 /* OrzNFCReader */,
 				2B30E99D2A1B14F700A2B402 /* Products */,
@@ -193,6 +202,37 @@
 				2B1312D02A20A55F003AE2DB /* PayloadView.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		2BCF34052A2D82E3007FDA02 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				2BCF34062A2D82E3007FDA02 /* CardReader */,
+				2BCF34092A2D82E3007FDA02 /* NDEF */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		2BCF34062A2D82E3007FDA02 /* CardReader */ = {
+			isa = PBXGroup;
+			children = (
+				2BCF34072A2D82E3007FDA02 /* API-ACR122U-2.04.pdf */,
+				2BCF34082A2D82E3007FDA02 /* TSP-ACR122U-3.06.pdf */,
+			);
+			path = CardReader;
+			sourceTree = "<group>";
+		};
+		2BCF34092A2D82E3007FDA02 /* NDEF */ = {
+			isa = PBXGroup;
+			children = (
+				2BCF340A2A2D82E3007FDA02 /* Simple NDEF Exchange Protocol.pdf */,
+				2BCF340B2A2D82E3007FDA02 /* NFC Data Exchange Format (NDEF).pdf */,
+				2BCF340C2A2D82E3007FDA02 /* Text Record Type Definition.pdf */,
+				2BCF340D2A2D82E3007FDA02 /* Smart Poster Record Type Definition.pdf */,
+				2BCF340E2A2D82E3007FDA02 /* URI Record Type Definition.pdf */,
+				2BCF340F2A2D82E3007FDA02 /* NFC Record Type Definition (RTD).pdf */,
+			);
+			path = NDEF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

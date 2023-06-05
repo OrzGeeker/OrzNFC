@@ -36,17 +36,21 @@ import Foundation
 ///     - 用户可控的蜂鸣器
 /// - 支持 AndroidTM OS 3.1 及以上版本
 /// - 符合下列标准:
-///     - ISO18092 o ISO 14443 o CE
+///     - IEC/EN 60950
+///     - ISO18092
+///     - ISO 14443
+///     - CE
 ///     - FCC
 ///     - KC
 ///     - VCCI
 ///     - MIC
 ///     - PC/SC
 ///     - CCID
-///     - Microsoft WHQL o RoHS2
-///     - IEC/EN 60950
+///     - Microsoft WHQL
+///     - RoHS2
 ///
-/// ACR122U 通过符合 USB 1.1 规范的 USB 端口与计算机建立连接，支持 USB 全速模式，速率为 12Mbps
+/// ACR122U 通过符合 USB 1.1 规范的 USB 端口与计算机建立连接，工作于 USB 全速模式，速率为 12Mbps
+///
 struct ACR122UA9 {
     
     static let name = "ACS ACR122U"
@@ -72,9 +76,14 @@ struct ACR122UA9 {
         case setPiccOpParameter(UInt8)
         
         /// 设置超时参数
+        /// 0x00 - 不检查超时
+        /// 0x01~0xFE - 以5秒为单位，进行超时设置，即 timeout = n * 5 秒
+        /// 0xFF - 一直等待，超时时长无限
         case setTimeoutParameter(UInt8)
         
-        /// 设置卡片检测期间蜂鸣器输出
+        /// 设置卡片检测期间蜂鸣器输出，默认打开
+        /// 0x00 - 关闭蜂鸣器
+        /// 0xFF - 打开蜂鸣器
         case setBuzzStatus(UInt8)
         
         /// 获取非接触式接口的当前设置

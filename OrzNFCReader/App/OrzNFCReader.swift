@@ -24,7 +24,7 @@ struct OrzNFCReader {
     private static var slotPublisherCancellable: Cancellable?
     
     /// 读卡器名称
-    private static let cardReaderName = ACR122UA9.name
+    private static var cardReaderName = ACR122UA9.name
     
     /// 读卡器插槽
     private static var cardReaderSlot: TKSmartCardSlot?
@@ -37,7 +37,15 @@ struct OrzNFCReader {
         
         slotPublisherCancellable = manager.publisher(for: \.slotNames).sink { slotNames in
 
-            guard slotNames.contains(cardReaderName) else {
+            let isConnected = slotNames.contains { slotName in
+                let isCardReader  = slotName.contains(cardReaderName)
+                if isCardReader {
+                    cardReaderName = slotName
+                }
+                return isCardReader
+            }
+            
+            guard isConnected else {
                 print("读卡器 \(cardReaderName) 未连接")
                 slotStatePublisherCancellable?.cancel()
                 slotStatePublisherCancellable = nil
@@ -106,12 +114,15 @@ extension OrzNFCReader {
             
             let success = try await card.beginSession()
             if success {
+                if try await card.transmit(ACR122UA9.Command.setBuzzStatus(0x00).request).first == ACR122UA9.Status.success.rawValue {
+                    print("Buzz has been disabled")
+                }
                 if let firewareVersion = try await card.transmit(ACR122UA9.Command.firmwareVersion.request).asciiString {
                     print("fireware version: \(firewareVersion)")
                 }
                 let reply = try await card.transmit(ACR122UA9.Command.piccOpParameter.request)
                 if reply.first == ACR122UA9.Status.success.rawValue {
-                    print("picc op params: \(reply.dropFirst().binString)")
+                    print("picc op params: \(reply.dropFirst().hexString)")
                 }
                 
                 
