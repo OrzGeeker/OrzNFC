@@ -36,7 +36,7 @@ struct OrzNFCReader {
     static func main() {
         
         slotPublisherCancellable = manager.publisher(for: \.slotNames).sink { slotNames in
-
+            
             let isConnected = slotNames.contains { slotName in
                 let isCardReader  = slotName.contains(cardReaderName)
                 if isCardReader {
@@ -111,20 +111,29 @@ extension OrzNFCReader {
             guard let card = cardReaderSlot?.makeSmartCard() else {
                 return
             }
-            
             let success = try await card.beginSession()
             if success {
-                if try await card.transmit(ACR122UA9.Command.setBuzzStatus(0x00).request).first == ACR122UA9.Status.success.rawValue {
-                    print("Buzz has been disabled")
-                }
+                // Get firmware version of the reader
                 if let firewareVersion = try await card.transmit(ACR122UA9.Command.firmwareVersion.request).asciiString {
                     print("fireware version: \(firewareVersion)")
                 }
+                // Get the PICC operating parameter
                 let reply = try await card.transmit(ACR122UA9.Command.piccOpParameter.request)
                 if reply.first == ACR122UA9.Status.success.rawValue {
-                    print("picc op params: \(reply.dropFirst().hexString)")
+                    print("picc op params: \(reply[1...].hexString)")
+                }
+                // Set the PICC operating parameter
+                var ret: Data
+                ret = try await card.transmit(ACR122UA9.Command.setPiccOpParameter(0b111_00001).request)
+                if ret.first == ACR122UA9.Status.success.rawValue {
+                    print("changed picc op params: \(ret[1...].hexString)")
                 }
                 
+                // Set Timeout Parameter
+                ret = try await card.transmit(ACR122UA9.Command.setTimeoutParameter(0x01).request)
+                if ret.first == ACR122UA9.Status.success.rawValue {
+                    print("set timeout success: \(ret[1...].hexString)")
+                }
                 
             }
             card.endSession()

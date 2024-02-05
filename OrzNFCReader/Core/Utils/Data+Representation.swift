@@ -10,7 +10,7 @@ import Foundation
 
 extension Data {
     var hexString: String {
-        return self.map { String(format: "%02x", $0) }.joined(separator: " ")
+        return self.map { String(format: "%02X", $0) }.joined(separator: " ")
     }
     
     var asciiString: String? {
