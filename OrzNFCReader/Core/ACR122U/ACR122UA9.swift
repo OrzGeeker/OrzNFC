@@ -100,6 +100,9 @@ struct ACR122UA9 {
         /// 0x01 - 打开天线
         case setAntenna(UInt8)
         
+        /// 获取当前设置
+        case currentSettings
+        
         
         var request: Data {
             switch self {
@@ -121,6 +124,8 @@ struct ACR122UA9 {
                 return Data([0xFF, 0x00, 0x40, ledStatus, 0x04, 0x00, 0x00, 0x00, 0x00])
             case .setAntenna(let enable):
                 return Data([0xFF, 0x00, 0x00, 0x00, 0x04, 0xD4, 0x32, 0x01, enable])
+            case .currentSettings:
+                return Data([0xFF, 0x00, 0x00, 0x00, 0x02, 0xD4, 0x04])
             }
         }
     }
