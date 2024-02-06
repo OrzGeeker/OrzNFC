@@ -83,6 +83,7 @@ extension OrzNFCReader {
     static func processCard(of slot: TKSmartCardSlot) {
         
         Task {
+            
             if let atr = slot.atr {
                 slot.name.log("读卡器名称")
                 atr.bytes.log("Card ATR")
@@ -90,13 +91,19 @@ extension OrzNFCReader {
                 slot.maxInputLength.log("APDU MaxInputLength(Reader -> Card)")
                 slot.maxOutputLength.log("APDU MaxOutputLength(Card -> Reader)")
             }
+            
             guard let card = slot.makeSmartCard() else {
                 "读卡器\(slot.name)上的卡片无效".log
                 return
             }
+            
+
             let success = try await card.beginSession()
+            
             if success {
+                
                 try await card.transmit(.UID).log("GET UID")
+                
                 try await card.transmit(.ATS).log("GET ATS")
                 
                 try await card.transmit(
@@ -153,7 +160,7 @@ extension OrzNFCReader {
                 
                 try await card.transmit(.readValueBlock(blockNumber: 0x04))
                     .log("read value block 4")
-                                
+                
                 try await card.transmit(.restoreValueBlock(sourceBlock: 0x03, targetBlock: 0x04))
                     .log("restore value block 4 with value block 3")
                 
