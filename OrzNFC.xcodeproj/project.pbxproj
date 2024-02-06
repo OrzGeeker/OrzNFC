@@ -33,6 +33,7 @@
 		F3C5118C2B72655C00DFE5EC /* ACR122UA9+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5118B2B72655C00DFE5EC /* ACR122UA9+Request.swift */; };
 		F3C5118E2B72666600DFE5EC /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5118D2B72666600DFE5EC /* String+Utils.swift */; };
 		F3C511922B726AD300DFE5EC /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C511912B726AD300DFE5EC /* Int+Utils.swift */; };
+		F3C511952B729B1F00DFE5EC /* ACR122UA9+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C511942B729B1F00DFE5EC /* ACR122UA9+Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +81,7 @@
 		F3C5118B2B72655C00DFE5EC /* ACR122UA9+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACR122UA9+Request.swift"; sourceTree = "<group>"; };
 		F3C5118D2B72666600DFE5EC /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		F3C511912B726AD300DFE5EC /* Int+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
+		F3C511942B729B1F00DFE5EC /* ACR122UA9+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACR122UA9+Tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			children = (
 				2BCF34302A2DCE92007FDA02 /* CardReader */,
 				2BCF34282A2DCE4E007FDA02 /* ACR122UA9.swift */,
+				F3C511942B729B1F00DFE5EC /* ACR122UA9+Tests.swift */,
 				F3C511892B7264E600DFE5EC /* ACR122UA9+Command.swift */,
 				F3C5118B2B72655C00DFE5EC /* ACR122UA9+Request.swift */,
 				2BCF34242A2DCE4E007FDA02 /* ACR122UA9+Response.swift */,
@@ -362,6 +365,7 @@
 				F3C5118C2B72655C00DFE5EC /* ACR122UA9+Request.swift in Sources */,
 				2BCF342B2A2DCE4E007FDA02 /* ISO14443.swift in Sources */,
 				2BCF342C2A2DCE4E007FDA02 /* ACR122UA9+Response.swift in Sources */,
+				F3C511952B729B1F00DFE5EC /* ACR122UA9+Tests.swift in Sources */,
 				2BCF342F2A2DCE4E007FDA02 /* ACR122UA9.swift in Sources */,
 				F3C511922B726AD300DFE5EC /* Int+Utils.swift in Sources */,
 				2BCF342A2A2DCE4E007FDA02 /* ISO18092.swift in Sources */,
