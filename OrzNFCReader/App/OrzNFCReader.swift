@@ -14,7 +14,8 @@ struct OrzNFCReader {
     
     /// 智能卡管理器
     private static let manager: TKSmartCardSlotManager = {
-        guard let mgr = TKSmartCardSlotManager.default else {
+        guard let mgr = TKSmartCardSlotManager.default
+        else {
             fatalError("The com.apple.security.smartcard entitlement is required in order to use TKSmartCardSlotManager.")
         }
         return mgr
@@ -40,7 +41,7 @@ struct OrzNFCReader {
                     
                     guard let slot = await manager.getSlot(withName: slotName)
                     else {
-                        print("找不到读卡器 \(slotName)")
+                        "找不到读卡器 \(slotName)".log
                         continue
                     }
                     
@@ -54,16 +55,15 @@ struct OrzNFCReader {
                         .sink { state in
                             switch state {
                             case .missing:
-                                print("读卡器被拔掉了")
+                                "读卡器被拔掉了".log
                             case .empty:
-                                print("没有放上智能卡")
+                                "没有放上智能卡".log
                             case .muteCard:
-                                print("智能卡无响应命令")
+                                "智能卡无响应命令".log
                             case .probing:
-                                print("正在探测智能卡")
+                                "正在探测智能卡".log
                             case .validCard:
-                                print("智能卡准备就绪")
-                                dumpCardInfo(of: slot)
+                                "智能卡准备就绪".log
                                 processCard(of: slot)
                             @unknown default:
                                 fatalError("读卡器未知状态")
@@ -80,54 +80,29 @@ struct OrzNFCReader {
 
 extension OrzNFCReader {
     
-    /// 打印智能卡相关信息
-    static func dumpCardInfo(of slot: TKSmartCardSlot) {
-        if let atr = slot.atr {
-            print("读卡器: \(slot.name)")
-            print("Card ATR: \(atr.bytes.hexString)")
-            print("Card Protocols: \(atr.protocols)")
-            print("APDU MaxInputLength(Reader -> Card): \(slot.maxInputLength)")
-            print("APDU MaxOutputLength(Card -> Reader): \(slot.maxOutputLength)")
-        }
-    }
-    
     static func processCard(of slot: TKSmartCardSlot) {
+        
         Task {
+            if let atr = slot.atr {
+                slot.name.log("读卡器名称")
+                atr.bytes.log("Card ATR")
+                atr.protocols.log("Card Protocols")
+                slot.maxInputLength.log("APDU MaxInputLength(Reader -> Card)")
+                slot.maxOutputLength.log("APDU MaxOutputLength(Card -> Reader)")
+            }
             guard let card = slot.makeSmartCard() else {
-                print("读卡器\(slot.name)上的卡片无效")
+                "读卡器\(slot.name)上的卡片无效".log
                 return
             }
             let success = try await card.beginSession()
             if success {
-                print(card.allowedProtocols)
-                print(card.currentProtocol)
-                // Get firmware version of the reader
-                if let firewareVersion = try await card.transmit(ACR122UA9.Command.firmwareVersion.request).asciiString {
-                    print("fireware version: \(firewareVersion)")
-                }
-                // Get the PICC operating parameter
-                let reply = try await card.transmit(ACR122UA9.Command.piccOpParameter.request)
-                if reply.first == ACR122UA9.Status.success.rawValue {
-                    print("picc op params: \(reply[1...].hexString)")
-                }
-                // Set the PICC operating parameter
-                var ret: Data
-                ret = try await card.transmit(ACR122UA9.Command.setPiccOpParameter(0b111_00001).request)
-                if ret.first == ACR122UA9.Status.success.rawValue {
-                    print("changed picc op params: \(ret[1...].hexString)")
-                }
-                
-                // Set Timeout Parameter
-                ret = try await card.transmit(ACR122UA9.Command.setTimeoutParameter(0x01).request)
-                if ret.first == ACR122UA9.Status.success.rawValue {
-                    print("set timeout success: \(ret[1...].hexString)")
-                } else {
-                    print("set timeout failure")
-                }
-                
-                // Get current settings of contactless interface
-                ret = try await card.transmit(ACR122UA9.Command.currentSettings.request)
-                print("settings: \(ret.hexString)")
+                try await card.transmit(.serialNumber).log("Serial Number")
+                try await card.transmit(.ATS).log("PICC ATS")
+                try await card.transmit(.firmwareVersion).asciiString?.log("Fireware Version")
+                try await card.transmit(.piccOpParameter).log("Get PICC OP Params")
+                try await card.transmit(.setPiccOpParameter(0b111_00001)).log("Set PICC OP Params")
+                try await card.transmit(.setTimeoutParameter(0x01)).log("Set Timeout Parameter")
+                try await card.transmit(.currentSettings).log("Current Settings")
             }
             card.endSession()
         }

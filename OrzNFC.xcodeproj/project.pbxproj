@@ -26,10 +26,13 @@
 		2BCF34292A2DCE4E007FDA02 /* Data+Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF341F2A2DCE4E007FDA02 /* Data+Representation.swift */; };
 		2BCF342A2A2DCE4E007FDA02 /* ISO18092.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34212A2DCE4E007FDA02 /* ISO18092.swift */; };
 		2BCF342B2A2DCE4E007FDA02 /* ISO14443.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34222A2DCE4E007FDA02 /* ISO14443.swift */; };
-		2BCF342C2A2DCE4E007FDA02 /* ACRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34242A2DCE4E007FDA02 /* ACRError.swift */; };
-		2BCF342D2A2DCE4E007FDA02 /* LED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34262A2DCE4E007FDA02 /* LED.swift */; };
-		2BCF342E2A2DCE4E007FDA02 /* Buzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34272A2DCE4E007FDA02 /* Buzzer.swift */; };
+		2BCF342C2A2DCE4E007FDA02 /* ACR122UA9+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34242A2DCE4E007FDA02 /* ACR122UA9+Response.swift */; };
 		2BCF342F2A2DCE4E007FDA02 /* ACR122UA9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF34282A2DCE4E007FDA02 /* ACR122UA9.swift */; };
+		F3C5117E2B725A6D00DFE5EC /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5117D2B725A6D00DFE5EC /* Array+Utils.swift */; };
+		F3C5118A2B7264E600DFE5EC /* ACR122UA9+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C511892B7264E600DFE5EC /* ACR122UA9+Command.swift */; };
+		F3C5118C2B72655C00DFE5EC /* ACR122UA9+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5118B2B72655C00DFE5EC /* ACR122UA9+Request.swift */; };
+		F3C5118E2B72666600DFE5EC /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5118D2B72666600DFE5EC /* String+Utils.swift */; };
+		F3C511922B726AD300DFE5EC /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C511912B726AD300DFE5EC /* Int+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,11 +72,14 @@
 		2BCF341F2A2DCE4E007FDA02 /* Data+Representation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Representation.swift"; sourceTree = "<group>"; };
 		2BCF34212A2DCE4E007FDA02 /* ISO18092.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO18092.swift; sourceTree = "<group>"; };
 		2BCF34222A2DCE4E007FDA02 /* ISO14443.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO14443.swift; sourceTree = "<group>"; };
-		2BCF34242A2DCE4E007FDA02 /* ACRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACRError.swift; sourceTree = "<group>"; };
-		2BCF34262A2DCE4E007FDA02 /* LED.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LED.swift; sourceTree = "<group>"; };
-		2BCF34272A2DCE4E007FDA02 /* Buzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buzzer.swift; sourceTree = "<group>"; };
+		2BCF34242A2DCE4E007FDA02 /* ACR122UA9+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACR122UA9+Response.swift"; sourceTree = "<group>"; };
 		2BCF34282A2DCE4E007FDA02 /* ACR122UA9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACR122UA9.swift; sourceTree = "<group>"; };
 		2BCF34302A2DCE92007FDA02 /* CardReader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = CardReader; path = OrzNFCReader/Core/ACR122U/CardReader; sourceTree = SOURCE_ROOT; };
+		F3C5117D2B725A6D00DFE5EC /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		F3C511892B7264E600DFE5EC /* ACR122UA9+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACR122UA9+Command.swift"; sourceTree = "<group>"; };
+		F3C5118B2B72655C00DFE5EC /* ACR122UA9+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACR122UA9+Request.swift"; sourceTree = "<group>"; };
+		F3C5118D2B72666600DFE5EC /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		F3C511912B726AD300DFE5EC /* Int+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				2BCF341F2A2DCE4E007FDA02 /* Data+Representation.swift */,
+				F3C5117D2B725A6D00DFE5EC /* Array+Utils.swift */,
+				F3C5118D2B72666600DFE5EC /* String+Utils.swift */,
+				F3C511912B726AD300DFE5EC /* Int+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -226,19 +235,11 @@
 			children = (
 				2BCF34302A2DCE92007FDA02 /* CardReader */,
 				2BCF34282A2DCE4E007FDA02 /* ACR122UA9.swift */,
-				2BCF34242A2DCE4E007FDA02 /* ACRError.swift */,
-				2BCF34252A2DCE4E007FDA02 /* Component */,
+				F3C511892B7264E600DFE5EC /* ACR122UA9+Command.swift */,
+				F3C5118B2B72655C00DFE5EC /* ACR122UA9+Request.swift */,
+				2BCF34242A2DCE4E007FDA02 /* ACR122UA9+Response.swift */,
 			);
 			path = ACR122U;
-			sourceTree = "<group>";
-		};
-		2BCF34252A2DCE4E007FDA02 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				2BCF34262A2DCE4E007FDA02 /* LED.swift */,
-				2BCF34272A2DCE4E007FDA02 /* Buzzer.swift */,
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +289,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					2B30E99B2A1B14F700A2B402 = {
 						CreatedOnToolsVersion = 14.2;
@@ -357,12 +358,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C5118E2B72666600DFE5EC /* String+Utils.swift in Sources */,
+				F3C5118C2B72655C00DFE5EC /* ACR122UA9+Request.swift in Sources */,
 				2BCF342B2A2DCE4E007FDA02 /* ISO14443.swift in Sources */,
-				2BCF342D2A2DCE4E007FDA02 /* LED.swift in Sources */,
-				2BCF342C2A2DCE4E007FDA02 /* ACRError.swift in Sources */,
-				2BCF342E2A2DCE4E007FDA02 /* Buzzer.swift in Sources */,
+				2BCF342C2A2DCE4E007FDA02 /* ACR122UA9+Response.swift in Sources */,
 				2BCF342F2A2DCE4E007FDA02 /* ACR122UA9.swift in Sources */,
+				F3C511922B726AD300DFE5EC /* Int+Utils.swift in Sources */,
 				2BCF342A2A2DCE4E007FDA02 /* ISO18092.swift in Sources */,
+				F3C5118A2B7264E600DFE5EC /* ACR122UA9+Command.swift in Sources */,
+				F3C5117E2B725A6D00DFE5EC /* Array+Utils.swift in Sources */,
 				2BCF34292A2DCE4E007FDA02 /* Data+Representation.swift in Sources */,
 				2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */,
 			);
@@ -418,6 +422,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -477,6 +482,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
