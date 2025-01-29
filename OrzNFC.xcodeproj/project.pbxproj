@@ -19,6 +19,9 @@
 		2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */; };
 		2B30E9D02A1B28DE00A2B402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */; };
 		2B30E9D22A1B2AAE00A2B402 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */; };
+		2B56191C2D4A2C8A00921DCC /* OrzNFCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */; };
+		2B5619212D4A455A00921DCC /* OrzNFCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619202D4A455800921DCC /* OrzNFCError.swift */; };
+		2B5619232D4A5BF700921DCC /* OrzNFCModel+ACR122U.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */; };
 		2B7981802A206FA200DF795A /* NDEFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79817F2A206FA200DF795A /* NDEFView.swift */; };
 		2B7981822A206FAF00DF795A /* OtherTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7981812A206FAF00DF795A /* OtherTagView.swift */; };
 		2B7981842A2070BF00DF795A /* NFCUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */; };
@@ -66,6 +69,9 @@
 		2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzNFCReader.swift; sourceTree = "<group>"; };
 		2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCModel.swift; sourceTree = "<group>"; };
+		2B5619202D4A455800921DCC /* OrzNFCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCError.swift; sourceTree = "<group>"; };
+		2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrzNFCModel+ACR122U.swift"; sourceTree = "<group>"; };
 		2B79817F2A206FA200DF795A /* NDEFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDEFView.swift; sourceTree = "<group>"; };
 		2B7981812A206FAF00DF795A /* OtherTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTagView.swift; sourceTree = "<group>"; };
 		2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCUnavailableView.swift; sourceTree = "<group>"; };
@@ -162,6 +168,8 @@
 		2B30E9CC2A1B185F00A2B402 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */,
+				2B56191D2D4A450700921DCC /* Model */,
 				2B30E9C32A1B177B00A2B402 /* OrzNFCReader.entitlements */,
 				2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */,
 			);
@@ -180,6 +188,15 @@
 				2B79817E2A206F8200DF795A /* Views */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		2B56191D2D4A450700921DCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B5619202D4A455800921DCC /* OrzNFCError.swift */,
+				2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2B79817E2A206F8200DF795A /* Views */ = {
@@ -259,7 +276,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2B79818C2A20791300DF795A /* PBXTargetDependency */,
 			);
 			name = OrzNFC;
 			productName = OrzNFC;
@@ -277,7 +293,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2B7981892A20781E00DF795A /* PBXTargetDependency */,
 			);
 			name = OrzNFCReader;
 			productName = OrzNFCReader;
@@ -292,7 +307,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					2B30E99B2A1B14F700A2B402 = {
 						CreatedOnToolsVersion = 14.2;
@@ -312,7 +327,6 @@
 			);
 			mainGroup = 2B30E9932A1B14F700A2B402;
 			packageReferences = (
-				2B79817D2A205A9000DF795A /* XCRemoteSwiftPackageReference "OrzSwiftLint" */,
 			);
 			productRefGroup = 2B30E99D2A1B14F700A2B402 /* Products */;
 			projectDirPath = "";
@@ -363,8 +377,10 @@
 			files = (
 				F3C5118E2B72666600DFE5EC /* String+Utils.swift in Sources */,
 				F3C5118C2B72655C00DFE5EC /* ACR122UA9+Request.swift in Sources */,
+				2B5619232D4A5BF700921DCC /* OrzNFCModel+ACR122U.swift in Sources */,
 				2BCF342B2A2DCE4E007FDA02 /* ISO14443.swift in Sources */,
 				2BCF342C2A2DCE4E007FDA02 /* ACR122UA9+Response.swift in Sources */,
+				2B5619212D4A455A00921DCC /* OrzNFCError.swift in Sources */,
 				F3C511952B729B1F00DFE5EC /* ACR122UA9+Tests.swift in Sources */,
 				2BCF342F2A2DCE4E007FDA02 /* ACR122UA9.swift in Sources */,
 				F3C511922B726AD300DFE5EC /* Int+Utils.swift in Sources */,
@@ -372,28 +388,19 @@
 				F3C5118A2B7264E600DFE5EC /* ACR122UA9+Command.swift in Sources */,
 				F3C5117E2B725A6D00DFE5EC /* Array+Utils.swift in Sources */,
 				2BCF34292A2DCE4E007FDA02 /* Data+Representation.swift in Sources */,
+				2B56191C2D4A2C8A00921DCC /* OrzNFCModel.swift in Sources */,
 				2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		2B7981892A20781E00DF795A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 2B7981882A20781E00DF795A /* OrzSwiftLintBuildToolPlugin */;
-		};
-		2B79818C2A20791300DF795A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 2B79818B2A20791300DF795A /* OrzSwiftLintBuildToolPlugin */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		2B30E9A92A1B14F800A2B402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -447,6 +454,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -454,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -500,6 +509,7 @@
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -534,7 +544,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -570,7 +579,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -587,7 +595,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -603,7 +610,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -638,30 +644,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2B79817D2A205A9000DF795A /* XCRemoteSwiftPackageReference "OrzSwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OrzGeeker/OrzSwiftLint.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2B7981882A20781E00DF795A /* OrzSwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2B79817D2A205A9000DF795A /* XCRemoteSwiftPackageReference "OrzSwiftLint" */;
-			productName = "plugin:OrzSwiftLintBuildToolPlugin";
-		};
-		2B79818B2A20791300DF795A /* OrzSwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2B79817D2A205A9000DF795A /* XCRemoteSwiftPackageReference "OrzSwiftLint" */;
-			productName = "plugin:OrzSwiftLintBuildToolPlugin";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2B30E9942A1B14F700A2B402 /* Project object */;
 }
