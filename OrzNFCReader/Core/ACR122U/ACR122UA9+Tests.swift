@@ -85,21 +85,19 @@ extension ACR122UA9 {
                     ])
                 ).log("led and buzzer status control")
                 
+                try await card.transmit(.firmwareVersion).asciiString?.log("Fireware Version")
                 try await card.transmit(.iso144434AATS).log("iso14443-4A ATS")
-                
-                try await card.transmit(.buzzer(isOn: false)).log("buzzer off")
+                try await card.transmit(.piccOpParameter).log("Get PICC OP Params")
+                try await card.transmit(.setPiccOpParameter(0b111_00001)).log("Set PICC OP Params")
+                try await card.transmit(.settings).log("Settings")
+                try await card.transmit(.buzzer(isOn: true)).log("buzzer off")
+                try await card.transmit(.setTimeoutParameter(0x01)).log("Set Timeout Parameter")
                 
                 try await card.transmit(
                     .custom(bytes: [
                         0x00, 0x84, 0x00, 0x00, 0x08
                     ])
                 ).log("custom bytes")
-                
-                try await card.transmit(.firmwareVersion).asciiString?.log("Fireware Version")
-                try await card.transmit(.piccOpParameter).log("Get PICC OP Params")
-                try await card.transmit(.setPiccOpParameter(0b111_00001)).log("Set PICC OP Params")
-                try await card.transmit(.setTimeoutParameter(0x01)).log("Set Timeout Parameter")
-                try await card.transmit(.settings).log("Settings")
             }
         }
     }

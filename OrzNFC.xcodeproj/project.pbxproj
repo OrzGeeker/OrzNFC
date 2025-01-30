@@ -22,6 +22,9 @@
 		2B56191C2D4A2C8A00921DCC /* OrzNFCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */; };
 		2B5619212D4A455A00921DCC /* OrzNFCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619202D4A455800921DCC /* OrzNFCError.swift */; };
 		2B5619232D4A5BF700921DCC /* OrzNFCModel+ACR122U.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */; };
+		2B5619272D4BCCDB00921DCC /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619262D4BCCBA00921DCC /* Defines.swift */; };
+		2B56192A2D4BE39200921DCC /* MifareClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619292D4BE37A00921DCC /* MifareClassic.swift */; };
+		2B56192C2D4BE39900921DCC /* MifareUltralight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56192B2D4BE39600921DCC /* MifareUltralight.swift */; };
 		2B7981802A206FA200DF795A /* NDEFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79817F2A206FA200DF795A /* NDEFView.swift */; };
 		2B7981822A206FAF00DF795A /* OtherTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7981812A206FAF00DF795A /* OtherTagView.swift */; };
 		2B7981842A2070BF00DF795A /* NFCUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */; };
@@ -72,6 +75,9 @@
 		2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCModel.swift; sourceTree = "<group>"; };
 		2B5619202D4A455800921DCC /* OrzNFCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCError.swift; sourceTree = "<group>"; };
 		2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrzNFCModel+ACR122U.swift"; sourceTree = "<group>"; };
+		2B5619262D4BCCBA00921DCC /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		2B5619292D4BE37A00921DCC /* MifareClassic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MifareClassic.swift; sourceTree = "<group>"; };
+		2B56192B2D4BE39600921DCC /* MifareUltralight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MifareUltralight.swift; sourceTree = "<group>"; };
 		2B79817F2A206FA200DF795A /* NDEFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDEFView.swift; sourceTree = "<group>"; };
 		2B7981812A206FAF00DF795A /* OtherTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTagView.swift; sourceTree = "<group>"; };
 		2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCUnavailableView.swift; sourceTree = "<group>"; };
@@ -168,7 +174,6 @@
 		2B30E9CC2A1B185F00A2B402 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */,
 				2B56191D2D4A450700921DCC /* Model */,
 				2B30E9C32A1B177B00A2B402 /* OrzNFCReader.entitlements */,
 				2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */,
@@ -195,8 +200,18 @@
 			children = (
 				2B5619202D4A455800921DCC /* OrzNFCError.swift */,
 				2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */,
+				2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2B5619282D4BE36900921DCC /* Mifare */ = {
+			isa = PBXGroup;
+			children = (
+				2B56192B2D4BE39600921DCC /* MifareUltralight.swift */,
+				2B5619292D4BE37A00921DCC /* MifareClassic.swift */,
+			);
+			path = Mifare;
 			sourceTree = "<group>";
 		};
 		2B79817E2A206F8200DF795A /* Views */ = {
@@ -222,6 +237,8 @@
 		2BCF341D2A2DCE4E007FDA02 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2B5619262D4BCCBA00921DCC /* Defines.swift */,
+				2B5619282D4BE36900921DCC /* Mifare */,
 				2BCF34232A2DCE4E007FDA02 /* ACR122U */,
 				2BCF34202A2DCE4E007FDA02 /* Protocol */,
 				2BCF341E2A2DCE4E007FDA02 /* Utils */,
@@ -376,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C5118E2B72666600DFE5EC /* String+Utils.swift in Sources */,
+				2B56192C2D4BE39900921DCC /* MifareUltralight.swift in Sources */,
 				F3C5118C2B72655C00DFE5EC /* ACR122UA9+Request.swift in Sources */,
 				2B5619232D4A5BF700921DCC /* OrzNFCModel+ACR122U.swift in Sources */,
 				2BCF342B2A2DCE4E007FDA02 /* ISO14443.swift in Sources */,
@@ -389,6 +407,8 @@
 				F3C5117E2B725A6D00DFE5EC /* Array+Utils.swift in Sources */,
 				2BCF34292A2DCE4E007FDA02 /* Data+Representation.swift in Sources */,
 				2B56191C2D4A2C8A00921DCC /* OrzNFCModel.swift in Sources */,
+				2B56192A2D4BE39200921DCC /* MifareClassic.swift in Sources */,
+				2B5619272D4BCCDB00921DCC /* Defines.swift in Sources */,
 				2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
