@@ -14,8 +14,10 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
         guard
             let readerError = error as? NFCReaderError,
             readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead,
-            readerError.code != .readerSessionInvalidationErrorUserCanceled
+            readerError.code != .readerSessionInvalidationErrorUserCanceled,
+            readerError.code != .readerSessionInvalidationErrorSystemIsBusy
         else {
+            error.localizedDescription.printDebugInfo()
             return
         }
         // Show an alert when the invalidation reason is not because of a

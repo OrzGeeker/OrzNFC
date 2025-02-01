@@ -33,7 +33,7 @@ extension OrzNFC {
     func ndefScan() {
         guard canRead
         else {
-            alertMessageSubject.send(OrzNFC.AlertMessage.deviceNotSupport)
+            alertMessageSubject.send(AlertMessage.deviceNotSupport)
             return
         }
         ndefReaderSession = NFCNDEFReaderSession(
@@ -41,8 +41,12 @@ extension OrzNFC {
             queue: nil,
             invalidateAfterFirstRead: false
         )
-        ndefReaderSession?.alertMessage = AlertMessage.ndefAlert
-        ndefReaderSession?.begin()
+        guard let ndefReaderSession
+        else {
+            return
+        }
+        ndefReaderSession.alertMessage = AlertMessage.ndefAlert
+        ndefReaderSession.begin()
     }
     
     func tagScan() {
@@ -61,7 +65,11 @@ extension OrzNFC {
             delegate: self,
             queue: nil
         )
-        tagReaderSession?.alertMessage = AlertMessage.tagAlert
-        tagReaderSession?.begin()
+        guard let tagReaderSession
+        else {
+            return
+        }
+        tagReaderSession.alertMessage = AlertMessage.tagAlert
+        tagReaderSession.begin()
     }
 }
