@@ -81,6 +81,7 @@ struct NDEFView: View {
                     Picker("Record Type", selection: $recordFormat) {
                         ForEach(NFCTypeNameFormat.allCases) {
                             Text($0.description)
+                                .tag($0)
                         }
                     }
                     ForEach(records, id: \.payload) { payload in
@@ -99,7 +100,15 @@ struct NDEFView: View {
                     }
                     HStack {
                         Button {
-                            records.append(.init(format: recordFormat, type: Data(), identifier: Data(), payload: Data()))
+                            switch recordFormat {
+                            case .nfcWellKnown:
+                                records.append(.text)
+                            case .absoluteURI:
+                                records.append(.webSiteURL)
+                            default:
+                                self.appModel.alertMessage = "not supported"
+                                break
+                            }
                         } label: {
                             Image(systemName: "plus.circle")
                         }

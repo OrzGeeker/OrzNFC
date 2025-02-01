@@ -39,10 +39,11 @@ struct NFCAvailableView: View {
                     .frame(width: iconSize, height: iconSize)
             }
             .onTapGesture {
-                appModel.startAction(
-                    on: selectedTab,
-                    actionType: actionType
-                )
+                appModel
+                    .start(
+                        on: selectedTab,
+                        action: actionType
+                    )
             }
             .offset(y: 200)
         })

@@ -23,6 +23,9 @@ class OrzNFC: NSObject {
     
     /// ndef message to be write into tags
     var ndefMessageToBeWrite: NFCNDEFMessage?
+    
+    /// alert message subject
+    let alertMessageSubject = PassthroughSubject<String, Never>()
 }
 
 extension OrzNFC {
@@ -30,6 +33,7 @@ extension OrzNFC {
     func ndefScan() {
         guard canRead
         else {
+            alertMessageSubject.send(OrzNFC.AlertMessage.deviceNotSupport)
             return
         }
         ndefReaderSession = NFCNDEFReaderSession(
@@ -44,6 +48,7 @@ extension OrzNFC {
     func tagScan() {
         guard canRead
         else {
+            alertMessageSubject.send(OrzNFC.AlertMessage.deviceNotSupport)
             return
         }
         tagReaderSession = NFCTagReaderSession(

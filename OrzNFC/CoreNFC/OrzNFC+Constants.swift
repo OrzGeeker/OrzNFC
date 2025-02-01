@@ -1,9 +1,11 @@
 extension OrzNFC {
     struct AlertMessage {
+        static let deviceNotSupport = "This Device doesn't support tag scanning."
         static let ndefAlert = "Hold your iPhone near a NFC NDEF tag."
         static let tagAlert = "Hold your iPhone near a NFC tag to read."
         static let tagReadOnly = "Tag is read only."
         static let tagReadWrite = "Tag is readwrite."
+        static let tagUnableDetect = "Unable detect a tag"
         static let tagUnableConnect = "Unable to connect to tag."
         static let tagMoreThanOneFound = "More than 1 tag is detected. Please remove all tags and try again."
         

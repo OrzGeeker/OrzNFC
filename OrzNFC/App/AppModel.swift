@@ -30,6 +30,14 @@ class AppModel: ObservableObject {
                 self.ndefMessage = ndefMessage
             }
             .store(in: &cancellables)
+        
+        self.nfc
+            .alertMessageSubject
+            .receive(on: DispatchQueue.main)
+            .sink { message in
+                self.alertMessage = message
+            }
+            .store(in: &cancellables)
     }
     
     // MARK: Public
@@ -43,18 +51,17 @@ class AppModel: ObservableObject {
 
 extension AppModel {
     
-    func startAction(
+    func start(
         on tabPage: TabPageID,
-        actionType: ActionType
+        action: ActionType
     ) {
-        
-        nfc.action = actionType
-        
-        nfc.ndefMessageToBeWrite = NFCNDEFMessage(records: [
-            .text,
-            .webSiteURL
-        ])
-        
+        nfc.action = action
+        nfc.ndefMessageToBeWrite = NFCNDEFMessage(
+            records: [
+                .text,
+                .webSiteURL
+            ]
+        )
         switch tabPage {
         case .ndef:
             nfc.ndefScan()
