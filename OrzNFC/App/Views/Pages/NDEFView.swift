@@ -1,10 +1,3 @@
-//
-//  NDEFView.swift
-//  OrzNFC
-//
-//  Created by joker on 2023/5/26.
-//
-
 import SwiftUI
 import CoreNFC
 
@@ -13,8 +6,11 @@ enum ActionType: String, CaseIterable {
     case write = "Write"
 }
 
-extension NFCTypeNameFormat: CaseIterable, CustomStringConvertible {
+extension ActionType: Identifiable {
+    var id: String { self.rawValue }
+}
 
+extension NFCTypeNameFormat: @retroactive CaseIterable {
     public static var allCases: [NFCTypeNameFormat] {
         return [
             .empty,
@@ -23,10 +19,12 @@ extension NFCTypeNameFormat: CaseIterable, CustomStringConvertible {
             .absoluteURI,
             .nfcExternal,
             .unknown,
-            .unchanged
+            .unchanged,
         ]
     }
+}
 
+extension NFCTypeNameFormat: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .empty:
@@ -49,33 +47,40 @@ extension NFCTypeNameFormat: CaseIterable, CustomStringConvertible {
     }
 }
 
+extension NFCTypeNameFormat: @retroactive Identifiable {
+    public var id: UInt8 { self.rawValue }
+}
+
 struct NDEFView: View {
-
-    @EnvironmentObject var appModel: AppModel
-
+    
+    @Environment(AppModel.self) var appModel
+    
     @Binding var actionType: ActionType
-
+    
     @State var records = [NFCNDEFPayload]()
-
+    
     @State var recordFormat: NFCTypeNameFormat = .nfcWellKnown
-
+    
     var body: some View {
         Form {
             Picker("Action Type", selection: $actionType) {
-                ForEach(ActionType.allCases, id: \.rawValue) { type in
-                    Text(type.rawValue).tag(type)
+                ForEach(ActionType.allCases) {
+                    Text($0.rawValue)
+                        .tag($0)
                 }
             }
             .pickerStyle(.inline)
             .listRowSeparator(.hidden)
-
+            
             Section("Payload") {
                 if actionType == .read, let ndefMessage = appModel.ndefMessage {
-                    ForEach(ndefMessage.records, id: \.payload) { PayloadView(payload: $0) }
+                    ForEach(ndefMessage.records, id: \.payload) {
+                        PayloadView(payload: $0)
+                    }
                 } else if actionType == .write {
                     Picker("Record Type", selection: $recordFormat) {
-                        ForEach(NFCTypeNameFormat.allCases, id: \.self) { type in
-                            Text(type.description)
+                        ForEach(NFCTypeNameFormat.allCases) {
+                            Text($0.description)
                         }
                     }
                     ForEach(records, id: \.payload) { payload in
@@ -105,14 +110,17 @@ struct NDEFView: View {
     }
 }
 
-struct NDEFView_Previews: PreviewProvider {
+#Preview("Write URI") {
+    NDEFView(
+        actionType: .constant(.write),
+        records: [
+            .webSiteURL,
+            .text
+        ]
+    ).environment(AppModel())
+}
 
-    static var previews: some View {
-
-        NDEFView(actionType: .constant(.write), records: [.wellKnownTypeURIPayload(string: "https://www.baidu.com")!])
-            .environmentObject(AppModel())
-
-        NDEFView(actionType: .constant(.read))
-            .environmentObject(AppModel())
-    }
+#Preview("Read") {
+    NDEFView(actionType: .constant(.read))
+        .environment(AppModel())
 }

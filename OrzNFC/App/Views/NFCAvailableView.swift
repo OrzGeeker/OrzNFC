@@ -1,10 +1,3 @@
-//
-//  NFCAvailableView.swift
-//  OrzNFC
-//
-//  Created by joker on 2023/5/26.
-//
-
 import SwiftUI
 
 enum TabPageID {
@@ -13,18 +6,24 @@ enum TabPageID {
 }
 
 struct NFCAvailableView: View {
-
+    
+    @Environment(AppModel.self) var appModel
+    
     @State private var selectedTab: TabPageID = .ndef
     
     @State private var actionType: ActionType = .read
-
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             NDEFView(actionType: $actionType)
-                .tabItem { Label("NDEF", image: "NFC") }
+                .tabItem {
+                    Label("NDEF", image: "NFC")
+                }
                 .tag(TabPageID.ndef)
             OtherTagView()
-                .tabItem { Label("Tag", systemImage: "sensor.tag.radiowaves.forward") }
+                .tabItem {
+                    Label("Tag", systemImage: "sensor.tag.radiowaves.forward")
+                }
                 .tag(TabPageID.tag)
         }
         .overlay(alignment: .center, content: {
@@ -40,15 +39,17 @@ struct NFCAvailableView: View {
                     .frame(width: iconSize, height: iconSize)
             }
             .onTapGesture {
-                AppModel.startAction(on: selectedTab, actionType: actionType)
+                appModel.startAction(
+                    on: selectedTab,
+                    actionType: actionType
+                )
             }
             .offset(y: 200)
         })
     }
 }
 
-struct NFCAvailableView_Previews: PreviewProvider {
-    static var previews: some View {
-        NFCAvailableView()
-    }
+#Preview {
+    NFCAvailableView()
+        .environment(AppModel())
 }

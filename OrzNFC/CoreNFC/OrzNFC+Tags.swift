@@ -1,11 +1,3 @@
-//
-//  OrzNFC+Tags.swift
-//  OrzNFC
-//
-//  Created by joker on 2019/7/21.
-//  Copyright © 2019 joker. All rights reserved.
-//
-
 import CoreNFC
 
 extension OrzNFC: NFCTagReaderSessionDelegate {

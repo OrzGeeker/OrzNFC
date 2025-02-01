@@ -1,11 +1,3 @@
-//
-//  OrzNFC+Constants.swift
-//  OrzNFC
-//
-//  Created by joker on 2019/7/20.
-//  Copyright © 2019 joker. All rights reserved.
-//
-
 extension OrzNFC {
     struct AlertMessage {
         static let ndefAlert = "Hold your iPhone near a NFC NDEF tag."
@@ -34,4 +26,45 @@ extension String {
         print("[DEBUG] \(self)")
 #endif
     }
+}
+
+// MARK: For Test
+import CoreNFC
+extension NFCNDEFPayload {
+    
+    static let webSiteURL = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "https://www.example.com")!
+    
+    static let email = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "mailto:user@example.com")!
+    
+    static let sms = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "sms:+14085551212")!
+    
+    static let telephone = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "tel:+14085551212")!
+    
+    static let faceTime = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "facetime://user@example.com")!
+    
+    static let text = NFCNDEFPayload
+        .wellKnownTypeTextPayload(
+            string: "Hello, NFC",
+            locale: .current)!
+    
+    static let empty = NFCNDEFPayload(
+        format: .empty,
+        type: Data(),
+        identifier: Data(),
+        payload: Data()
+    )
+    
+    static let faceTimeAudio = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "facetime-audio://user@example.com")!
+    
+    static let maps = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "http://maps.apple.com/?address=Apple%20Park,Cupertino,California")!
+    
+    static let homeKit = NFCNDEFPayload
+        .wellKnownTypeURIPayload(string: "X-HM://12345")!
 }

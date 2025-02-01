@@ -1,26 +1,19 @@
-//
-//  AppModel.swift
-//  OrzNFC
-//
-//  Created by joker on 2023/5/22.
-//
-
 import Foundation
 import CoreNFC
 import Combine
 
+@Observable
 class AppModel: ObservableObject {
     
-    @Published var showAlert: Bool
-
+    // MARK: Common
+    var showAlert: Bool
+    
     var alertMessage: String {
         didSet {
             showAlert = true
         }
     }
-
-    @Published var ndefMessage: NFCNDEFMessage?
-
+    
     init(
         showAlert: Bool = false,
         alertMessage: String = "",
@@ -29,29 +22,39 @@ class AppModel: ObservableObject {
         self.showAlert = showAlert
         self.alertMessage = alertMessage
         self.ndefMessage = ndefMessage
-
-        let cancellable = Self.nfc.ndefMessageSubject.receive(on: DispatchQueue.main).sink { ndefMessage in
-            self.ndefMessage = ndefMessage
-        }
-        cancellables.append(cancellable)
+        
+        self.nfc
+            .ndefMessageSubject
+            .receive(on: DispatchQueue.main)
+            .sink { ndefMessage in
+                self.ndefMessage = ndefMessage
+            }
+            .store(in: &cancellables)
     }
-
-    private var cancellables = [AnyCancellable]()
+    
+    // MARK: Public
+    var ndefMessage: NFCNDEFMessage?
+    var canRead: Bool { nfc.canRead }
+    
+    // MARK: Private
+    private var cancellables = Set<AnyCancellable>()
+    private let nfc = OrzNFC()
 }
 
 extension AppModel {
-
-    static private let nfc = OrzNFC()
-
-    static func startAction(on tabPage: TabPageID, actionType: ActionType) {
-
+    
+    func startAction(
+        on tabPage: TabPageID,
+        actionType: ActionType
+    ) {
+        
         nfc.action = actionType
-
+        
         nfc.ndefMessageToBeWrite = NFCNDEFMessage(records: [
-            .wellKnownTypeTextPayload(string: "Text Payload", locale: .current)!,
-            .wellKnownTypeURIPayload(string: "https://www.baidu.com")!
+            .text,
+            .webSiteURL
         ])
-
+        
         switch tabPage {
         case .ndef:
             nfc.ndefScan()
@@ -59,6 +62,4 @@ extension AppModel {
             nfc.tagScan()
         }
     }
-
-    static func canRead() -> Bool { nfc.canRead }
 }

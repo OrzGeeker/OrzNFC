@@ -1,10 +1,3 @@
-//
-//  OrzNFCApp.swift
-//  OrzNFC
-//
-//  Created by joker on 2023/5/22.
-//
-
 import SwiftUI
 
 @main
@@ -14,7 +7,7 @@ struct OrzNFCApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(model)
+                .environment(model)
                 .alert(isPresented: $model.showAlert) {
                     Alert(title: Text(model.alertMessage))
                 }

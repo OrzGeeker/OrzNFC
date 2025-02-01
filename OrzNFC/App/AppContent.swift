@@ -1,15 +1,10 @@
-//
-//  ContentView.swift
-//  OrzNFC
-//
-//  Created by joker on 2023/5/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(AppModel.self) var appModel
+    
     var body: some View {
-        if AppModel.canRead() {
+        if appModel.canRead {
             NFCAvailableView()
         } else {
             NFCUnavailableView()
@@ -17,8 +12,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
+        .environment(AppModel())
 }
