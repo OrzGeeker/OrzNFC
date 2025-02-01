@@ -45,13 +45,26 @@ extension OrzNFC {
         action: ActionType
     ) {
         if case let .feliCa(feliCaTag) = tag {
-            alertMessageSubject.send("feliCaTag")
+            alertMessageSubject.send("feliCaTag: \(feliCaTag.description)")
         } else if case let .iso15693(iso15693Tag) = tag {
-            alertMessageSubject.send("iso15693Tag")
+            alertMessageSubject.send("iso15693Tag: \(iso15693Tag.description)")
         } else if case let .iso7816(iso7816Tag) = tag {
-            alertMessageSubject.send("iso7816Tag")
+            alertMessageSubject.send("iso7816Tag: \(iso7816Tag.description)")
         } else if case let .miFare(mifareTag) = tag {
-            alertMessageSubject.send("mifareTag")
+            var family: String
+            switch mifareTag.mifareFamily {
+            case .unknown:
+                family = "unknown"
+            case .ultralight:
+                family = "ultralight"
+            case .desfire:
+                family = "desfire"
+            case .plus:
+                family = "plus"
+            @unknown default:
+                family = "undefined"
+            }
+            alertMessageSubject.send("mifareTag: \(family)")
         } else {
             alertMessageSubject.send("unknown tag")
         }
