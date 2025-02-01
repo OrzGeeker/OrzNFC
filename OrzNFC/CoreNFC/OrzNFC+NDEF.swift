@@ -3,11 +3,12 @@ import CoreNFC
 extension OrzNFC: NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        _ = messages.map { print($0) }
+        // Do not add code in this function. This method isn't called
+        // when you provide `readerSession(_:didDetect:)`.
     }
     
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-        "ndef reader session become active".printDebugInfo()
+        "ndef reader session become active, and ready to read/write".printDebugInfo()
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
@@ -29,16 +30,8 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
         if tags.count > 1 {
-            let retryInterval = DispatchTimeInterval.milliseconds(500)
             session.alertMessage = AlertMessage.tagMoreThanOneFound
-            DispatchQueue
-                .global()
-                .asyncAfter(
-                    deadline: .now() + retryInterval,
-                    execute: {
-                        session.restartPolling()
-                    }
-                )
+            self.ndefTagRemovalDetect(tags.first!)
             return
         }
         guard let tag = tags.first, let action = action
@@ -123,16 +116,20 @@ extension OrzNFC {
     }
     
     func writeNDEF(tag: NFCNDEFTag, session: NFCNDEFReaderSession, capacity: Int) {
-        if let message = ndefMessageToBeWrite {
-            tag.writeNDEF(message, completionHandler: { (error: Error?) in
-                guard error == nil
-                else {
-                    session.invalidate(errorMessage: AlertMessage.ndefWriteFailed)
-                    return
-                }
-                session.alertMessage = AlertMessage.ndefWriteSuccessed
-                session.invalidate()
-            })
+        guard let message = ndefMessageToBeWrite,
+              message.length <= capacity
+        else {
+            session.alertMessage = AlertMessage.ndefTagCapacityTooSmall
+            return
         }
+        tag.writeNDEF(message, completionHandler: { (error: Error?) in
+            guard error == nil
+            else {
+                session.invalidate(errorMessage: AlertMessage.ndefWriteFailed)
+                return
+            }
+            session.alertMessage = AlertMessage.ndefWriteSuccessed
+            session.invalidate()
+        })
     }
 }

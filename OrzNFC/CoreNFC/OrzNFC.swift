@@ -28,6 +28,7 @@ class OrzNFC: NSObject {
     let alertMessageSubject = PassthroughSubject<String, Never>()
 }
 
+/// NDEF Reader Session
 extension OrzNFC {
     
     func ndefScan() {
@@ -49,6 +50,31 @@ extension OrzNFC {
         ndefReaderSession.begin()
     }
     
+    func ndefTagRemovalDetect(_ tag: NFCNDEFTag) {
+        // In the tag removal procedure, you connect to the tag and query for
+        // its availability. You restart RF polling when the tag becomes
+        // unavailable; otherwise, wait for certain period of time and repeat
+        // availability checking.
+        self.ndefReaderSession?.connect(to: tag) { (error: Error?) in
+            guard error == nil && tag.isAvailable
+            else {
+                "Restart polling".printDebugInfo()
+                self.ndefReaderSession?.restartPolling()
+                return
+            }
+            DispatchQueue.global().asyncAfter(
+                deadline: DispatchTime.now() + .milliseconds(500),
+                execute: {
+                    self.ndefTagRemovalDetect(tag)
+                }
+            )
+        }
+    }
+}
+
+/// Tag Reader Session
+extension OrzNFC {
+    
     func tagScan() {
         guard canRead
         else {
@@ -58,9 +84,9 @@ extension OrzNFC {
         tagReaderSession = NFCTagReaderSession(
             pollingOption: [
                 .iso14443,
-                .iso18092,
                 .iso15693,
-                .pace
+                .iso18092,
+//                .pace,
             ],
             delegate: self,
             queue: nil
@@ -72,4 +98,26 @@ extension OrzNFC {
         tagReaderSession.alertMessage = AlertMessage.tagAlert
         tagReaderSession.begin()
     }
+    
+    func tagRemovalDetect(_ tag: NFCTag) {
+        // In the tag removal procedure, you connect to the tag and query for
+        // its availability. You restart RF polling when the tag becomes
+        // unavailable; otherwise, wait for certain period of time and repeat
+        // availability checking.
+        self.tagReaderSession?.connect(to: tag) { (error: Error?) in
+            guard error == nil && tag.isAvailable
+            else {
+                "Restart polling".printDebugInfo()
+                self.tagReaderSession?.restartPolling()
+                return
+            }
+            DispatchQueue.global().asyncAfter(
+                deadline: DispatchTime.now() + .milliseconds(500),
+                execute: {
+                    self.tagRemovalDetect(tag)
+                }
+            )
+        }
+    }
 }
+

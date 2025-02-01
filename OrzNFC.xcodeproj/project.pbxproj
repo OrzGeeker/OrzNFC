@@ -82,6 +82,7 @@
 		2B56192B2D4BE39600921DCC /* MifareUltralight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MifareUltralight.swift; sourceTree = "<group>"; };
 		2B6A95EF2D4E6EC500B87BB8 /* ActionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPicker.swift; sourceTree = "<group>"; };
 		2B6A95F42D4E706800B87BB8 /* RecordTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTypePicker.swift; sourceTree = "<group>"; };
+		2B6A95F62D4EA4FE00B87BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B79817F2A206FA200DF795A /* NDEFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDEFView.swift; sourceTree = "<group>"; };
 		2B7981812A206FAF00DF795A /* OtherTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTagView.swift; sourceTree = "<group>"; };
 		2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCUnavailableView.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		2B30E99E2A1B14F700A2B402 /* OrzNFC */ = {
 			isa = PBXGroup;
 			children = (
+				2B6A95F62D4EA4FE00B87BB8 /* Info.plist */,
 				2B30E9CE2A1B187C00A2B402 /* App */,
 				2B30E9AF2A1B171D00A2B402 /* CoreNFC */,
 				2B30E9A62A1B14F800A2B402 /* Preview Content */,
@@ -554,10 +556,13 @@
 				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OrzNFC/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Read Tags";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -590,10 +595,13 @@
 				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OrzNFC/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Read Tags";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

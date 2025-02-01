@@ -20,6 +20,7 @@ extension OrzNFC {
         static let ndefWriteFailed  = "Write NDEF message failed."
         static let ndefWriteSuccessed = "Write NDEF message successful."
         static let ndefReaderSessionNotReady = "NDEF Reader is not Ready"
+        static let ndefTagCapacityTooSmall = "Tag capacity is too small."
     }
 }
 
