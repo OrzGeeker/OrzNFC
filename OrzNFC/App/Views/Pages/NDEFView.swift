@@ -1,55 +1,7 @@
 import SwiftUI
 import CoreNFC
 
-enum ActionType: String, CaseIterable {
-    case read = "Read"
-    case write = "Write"
-}
 
-extension ActionType: Identifiable {
-    var id: String { self.rawValue }
-}
-
-extension NFCTypeNameFormat: @retroactive CaseIterable {
-    public static var allCases: [NFCTypeNameFormat] {
-        return [
-            .empty,
-            .nfcWellKnown,
-            .media,
-            .absoluteURI,
-            .nfcExternal,
-            .unknown,
-            .unchanged,
-        ]
-    }
-}
-
-extension NFCTypeNameFormat: @retroactive CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .empty:
-            return "empty"
-        case .nfcWellKnown:
-            return "wellKnown"
-        case .media:
-            return "media"
-        case .absoluteURI:
-            return "URI"
-        case .nfcExternal:
-            return "external"
-        case .unknown:
-            return "unknown"
-        case .unchanged:
-            return "unchanged"
-        @unknown default:
-            fatalError("Invalid Format")
-        }
-    }
-}
-
-extension NFCTypeNameFormat: @retroactive Identifiable {
-    public var id: UInt8 { self.rawValue }
-}
 
 struct NDEFView: View {
     
@@ -63,42 +15,18 @@ struct NDEFView: View {
     
     var body: some View {
         Form {
-            Picker("Action Type", selection: $actionType) {
-                ForEach(ActionType.allCases) {
-                    Text($0.rawValue)
-                        .tag($0)
-                }
-            }
-            .pickerStyle(.inline)
-            .listRowSeparator(.hidden)
+            ActionPicker(actionType: $actionType)
             
             Section("Payload") {
+                
                 if actionType == .read, let ndefMessage = appModel.ndefMessage {
-                    ForEach(ndefMessage.records, id: \.payload) {
-                        PayloadView(payload: $0)
+                    List(ndefMessage.records, id: \.payload) { payload in
+                        PayloadView(payload: payload)
                     }
                 } else if actionType == .write {
-                    Picker("Record Type", selection: $recordFormat) {
-                        ForEach(NFCTypeNameFormat.allCases) {
-                            Text($0.description)
-                                .tag($0)
-                        }
-                    }
-                    ForEach(records, id: \.payload) { payload in
-                        HStack {
-                            PayloadView(payload: payload)
-                            Spacer()
-                            Button {
-                                records.removeAll { item in
-                                    return payload == item
-                                }
-                            } label: {
-                                Image(systemName: "minus.circle")
-                            }
-                            .buttonStyle(.borderless)
-                        }
-                    }
                     HStack {
+                        RecordTypePicker(recordFormat: $recordFormat)
+                        Spacer(minLength: 20)
                         Button {
                             switch recordFormat {
                             case .nfcWellKnown:
@@ -112,6 +40,10 @@ struct NDEFView: View {
                         } label: {
                             Image(systemName: "plus.circle")
                         }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                    List($records, id: \.payload, editActions: .all) { $payload in
+                        PayloadView(payload: payload)
                     }
                 }
             }

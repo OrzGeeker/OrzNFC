@@ -25,6 +25,8 @@
 		2B5619272D4BCCDB00921DCC /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619262D4BCCBA00921DCC /* Defines.swift */; };
 		2B56192A2D4BE39200921DCC /* MifareClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619292D4BE37A00921DCC /* MifareClassic.swift */; };
 		2B56192C2D4BE39900921DCC /* MifareUltralight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56192B2D4BE39600921DCC /* MifareUltralight.swift */; };
+		2B6A95F02D4E6EC900B87BB8 /* ActionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A95EF2D4E6EC500B87BB8 /* ActionPicker.swift */; };
+		2B6A95F52D4E706A00B87BB8 /* RecordTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A95F42D4E706800B87BB8 /* RecordTypePicker.swift */; };
 		2B7981802A206FA200DF795A /* NDEFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79817F2A206FA200DF795A /* NDEFView.swift */; };
 		2B7981822A206FAF00DF795A /* OtherTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7981812A206FAF00DF795A /* OtherTagView.swift */; };
 		2B7981842A2070BF00DF795A /* NFCUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */; };
@@ -78,6 +80,8 @@
 		2B5619262D4BCCBA00921DCC /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		2B5619292D4BE37A00921DCC /* MifareClassic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MifareClassic.swift; sourceTree = "<group>"; };
 		2B56192B2D4BE39600921DCC /* MifareUltralight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MifareUltralight.swift; sourceTree = "<group>"; };
+		2B6A95EF2D4E6EC500B87BB8 /* ActionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPicker.swift; sourceTree = "<group>"; };
+		2B6A95F42D4E706800B87BB8 /* RecordTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTypePicker.swift; sourceTree = "<group>"; };
 		2B79817F2A206FA200DF795A /* NDEFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDEFView.swift; sourceTree = "<group>"; };
 		2B7981812A206FAF00DF795A /* OtherTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTagView.swift; sourceTree = "<group>"; };
 		2B7981832A2070BF00DF795A /* NFCUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCUnavailableView.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 		2B7981872A2077FF00DF795A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2B6A95EF2D4E6EC500B87BB8 /* ActionPicker.swift */,
+				2B6A95F42D4E706800B87BB8 /* RecordTypePicker.swift */,
 				2B79817F2A206FA200DF795A /* NDEFView.swift */,
 				2B7981812A206FAF00DF795A /* OtherTagView.swift */,
 				2B1312D02A20A55F003AE2DB /* PayloadView.swift */,
@@ -375,6 +381,8 @@
 				2B7981862A20716100DF795A /* NFCAvailableView.swift in Sources */,
 				2B30E9B52A1B171D00A2B402 /* OrzNFC+Tags.swift in Sources */,
 				2B30E9B42A1B171D00A2B402 /* OrzNFC+NDEF.swift in Sources */,
+				2B6A95F52D4E706A00B87BB8 /* RecordTypePicker.swift in Sources */,
+				2B6A95F02D4E6EC900B87BB8 /* ActionPicker.swift in Sources */,
 				2B30E9B62A1B171D00A2B402 /* OrzNFC.swift in Sources */,
 				2B1312D12A20A55F003AE2DB /* PayloadView.swift in Sources */,
 				2B7981802A206FA200DF795A /* NDEFView.swift in Sources */,
