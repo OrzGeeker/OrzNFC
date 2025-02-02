@@ -24,14 +24,6 @@ extension OrzNFC {
     }
 }
 
-extension String {
-    func printDebugInfo() {
-#if DEBUG
-        print("[DEBUG] \(self)")
-#endif
-    }
-}
-
 // MARK: For Test
 import CoreNFC
 extension NFCNDEFPayload {

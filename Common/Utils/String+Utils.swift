@@ -1,10 +1,3 @@
-//
-//  String+Utils.swift
-//  OrzNFCReader
-//
-//  Created by joker on 2/6/24.
-//
-
 import Foundation
 
 extension String {
@@ -19,5 +12,12 @@ extension String {
     }
     
     var log: Void { print(self) }
-    
+}
+
+extension String {
+    func printDebugInfo() {
+#if DEBUG
+        print("[DEBUG] \(self)")
+#endif
+    }
 }

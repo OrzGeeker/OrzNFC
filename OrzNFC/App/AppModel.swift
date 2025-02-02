@@ -53,20 +53,16 @@ extension AppModel {
     
     func start(
         on tabPage: TabPageID,
-        action: ActionType
+        action: ActionType,
+        tagPollingOption: NFCTagReaderSession.PollingOption
     ) {
         nfc.action = action
-        nfc.ndefMessageToBeWrite = NFCNDEFMessage(
-            records: [
-                .text,
-                .webSiteURL
-            ]
-        )
+        nfc.ndefMessageToBeWrite = NFCNDEFMessage(records: [.text, .webSiteURL])
         switch tabPage {
         case .ndef:
             nfc.ndefScan()
         case .tag:
-            nfc.tagScan()
+            nfc.tagScan(pollingOption: tagPollingOption)
         }
     }
 }

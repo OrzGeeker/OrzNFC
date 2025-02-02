@@ -1,10 +1,3 @@
-//
-//  Int+Utils.swift
-//  OrzNFCReader
-//
-//  Created by joker on 2/6/24.
-//
-
 import Foundation
 
 extension Int {

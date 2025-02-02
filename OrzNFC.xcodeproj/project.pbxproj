@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,11 @@
 		2B30E9C82A1B177B00A2B402 /* OrzNFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */; };
 		2B30E9D02A1B28DE00A2B402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */; };
 		2B30E9D22A1B2AAE00A2B402 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */; };
+		2B5255862D4F09FE002AE491 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5118D2B72666600DFE5EC /* String+Utils.swift */; };
+		2B5255872D4F09FE002AE491 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C5117D2B725A6D00DFE5EC /* Array+Utils.swift */; };
+		2B5255882D4F09FE002AE491 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C511912B726AD300DFE5EC /* Int+Utils.swift */; };
+		2B5255892D4F09FE002AE491 /* Data+Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF341F2A2DCE4E007FDA02 /* Data+Representation.swift */; };
+		2B52558B2D4F0B18002AE491 /* TagPollingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52558A2D4F0B0C002AE491 /* TagPollingPicker.swift */; };
 		2B56191C2D4A2C8A00921DCC /* OrzNFCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */; };
 		2B5619212D4A455A00921DCC /* OrzNFCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619202D4A455800921DCC /* OrzNFCError.swift */; };
 		2B5619232D4A5BF700921DCC /* OrzNFCModel+ACR122U.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */; };
@@ -74,6 +79,7 @@
 		2B30E9C42A1B177B00A2B402 /* OrzNFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzNFCReader.swift; sourceTree = "<group>"; };
 		2B30E9CF2A1B28DE00A2B402 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B30E9D12A1B2AAE00A2B402 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		2B52558A2D4F0B0C002AE491 /* TagPollingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPollingPicker.swift; sourceTree = "<group>"; };
 		2B56191B2D4A2C7D00921DCC /* OrzNFCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCModel.swift; sourceTree = "<group>"; };
 		2B5619202D4A455800921DCC /* OrzNFCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzNFCError.swift; sourceTree = "<group>"; };
 		2B5619222D4A5BEE00921DCC /* OrzNFCModel+ACR122U.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrzNFCModel+ACR122U.swift"; sourceTree = "<group>"; };
@@ -101,6 +107,10 @@
 		F3C511942B729B1F00DFE5EC /* ACR122UA9+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACR122UA9+Tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2B5255822D4F0923002AE491 /* Manual */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Manual; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		2B30E9992A1B14F700A2B402 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2B30E9AE2A1B170900A2B402 /* README.md */,
+				2B5255852D4F09B7002AE491 /* Common */,
 				2B30E99E2A1B14F700A2B402 /* OrzNFC */,
 				2B30E9BD2A1B175200A2B402 /* OrzNFCReader */,
 				2B30E99D2A1B14F700A2B402 /* Products */,
@@ -160,10 +171,10 @@
 		2B30E9AF2A1B171D00A2B402 /* CoreNFC */ = {
 			isa = PBXGroup;
 			children = (
-				2B30E9B02A1B171D00A2B402 /* OrzNFC+NDEF.swift */,
-				2B30E9B12A1B171D00A2B402 /* OrzNFC+Tags.swift */,
 				2B30E9B22A1B171D00A2B402 /* OrzNFC.swift */,
 				2B30E9B32A1B171D00A2B402 /* OrzNFC+Constants.swift */,
+				2B30E9B02A1B171D00A2B402 /* OrzNFC+NDEF.swift */,
+				2B30E9B12A1B171D00A2B402 /* OrzNFC+Tags.swift */,
 			);
 			path = CoreNFC;
 			sourceTree = "<group>";
@@ -201,6 +212,33 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		2B5255852D4F09B7002AE491 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2BCF341E2A2DCE4E007FDA02 /* Utils */,
+				2B5255822D4F0923002AE491 /* Manual */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2B52558C2D4F0D37002AE491 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				2B6A95EF2D4E6EC500B87BB8 /* ActionPicker.swift */,
+				2B6A95F42D4E706800B87BB8 /* RecordTypePicker.swift */,
+				2B52558A2D4F0B0C002AE491 /* TagPollingPicker.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		2B52558D2D4F0D46002AE491 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				2B1312D02A20A55F003AE2DB /* PayloadView.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		2B56191D2D4A450700921DCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,11 +271,10 @@
 		2B7981872A2077FF00DF795A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				2B6A95EF2D4E6EC500B87BB8 /* ActionPicker.swift */,
-				2B6A95F42D4E706800B87BB8 /* RecordTypePicker.swift */,
 				2B79817F2A206FA200DF795A /* NDEFView.swift */,
 				2B7981812A206FAF00DF795A /* OtherTagView.swift */,
-				2B1312D02A20A55F003AE2DB /* PayloadView.swift */,
+				2B52558D2D4F0D46002AE491 /* Item */,
+				2B52558C2D4F0D37002AE491 /* Picker */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -249,7 +286,6 @@
 				2B5619282D4BE36900921DCC /* Mifare */,
 				2BCF34232A2DCE4E007FDA02 /* ACR122U */,
 				2BCF34202A2DCE4E007FDA02 /* Protocol */,
-				2BCF341E2A2DCE4E007FDA02 /* Utils */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -257,10 +293,10 @@
 		2BCF341E2A2DCE4E007FDA02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2BCF341F2A2DCE4E007FDA02 /* Data+Representation.swift */,
 				F3C5117D2B725A6D00DFE5EC /* Array+Utils.swift */,
-				F3C5118D2B72666600DFE5EC /* String+Utils.swift */,
+				2BCF341F2A2DCE4E007FDA02 /* Data+Representation.swift */,
 				F3C511912B726AD300DFE5EC /* Int+Utils.swift */,
+				F3C5118D2B72666600DFE5EC /* String+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -384,6 +420,10 @@
 				2B30E9B52A1B171D00A2B402 /* OrzNFC+Tags.swift in Sources */,
 				2B30E9B42A1B171D00A2B402 /* OrzNFC+NDEF.swift in Sources */,
 				2B6A95F52D4E706A00B87BB8 /* RecordTypePicker.swift in Sources */,
+				2B5255862D4F09FE002AE491 /* String+Utils.swift in Sources */,
+				2B5255872D4F09FE002AE491 /* Array+Utils.swift in Sources */,
+				2B5255882D4F09FE002AE491 /* Int+Utils.swift in Sources */,
+				2B5255892D4F09FE002AE491 /* Data+Representation.swift in Sources */,
 				2B6A95F02D4E6EC900B87BB8 /* ActionPicker.swift in Sources */,
 				2B30E9B62A1B171D00A2B402 /* OrzNFC.swift in Sources */,
 				2B1312D12A20A55F003AE2DB /* PayloadView.swift in Sources */,
@@ -392,6 +432,7 @@
 				2B30E9B72A1B171D00A2B402 /* OrzNFC+Constants.swift in Sources */,
 				2B30E9D02A1B28DE00A2B402 /* AppDelegate.swift in Sources */,
 				2B7981842A2070BF00DF795A /* NFCUnavailableView.swift in Sources */,
+				2B52558B2D4F0B18002AE491 /* TagPollingPicker.swift in Sources */,
 				2B30E9A22A1B14F700A2B402 /* AppContent.swift in Sources */,
 				2B7981822A206FAF00DF795A /* OtherTagView.swift in Sources */,
 				2B30E9A02A1B14F700A2B402 /* App.swift in Sources */,

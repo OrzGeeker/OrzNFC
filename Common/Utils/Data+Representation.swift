@@ -1,11 +1,3 @@
-//
-//  Data+Representation.swift
-//  OrzNFCReader
-//
-//  Created by joker on 2022/7/12.
-//  Copyright © 2022 joker. All rights reserved.
-//
-
 import Foundation
 
 extension Data {

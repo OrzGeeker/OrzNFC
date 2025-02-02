@@ -1,5 +1,50 @@
 import CoreNFC
 
+// MARK: NDEF Reader Session
+extension OrzNFC {
+    
+    func ndefScan() {
+        guard canRead
+        else {
+            alertMessageSubject.send(AlertMessage.deviceNotSupport)
+            return
+        }
+        ndefReaderSession = NFCNDEFReaderSession(
+            delegate: self,
+            queue: nil,
+            invalidateAfterFirstRead: false
+        )
+        guard let ndefReaderSession
+        else {
+            return
+        }
+        ndefReaderSession.alertMessage = AlertMessage.ndefAlert
+        ndefReaderSession.begin()
+    }
+    
+    func ndefTagRemovalDetect(_ tag: NFCNDEFTag) {
+        // In the tag removal procedure, you connect to the tag and query for
+        // its availability. You restart RF polling when the tag becomes
+        // unavailable; otherwise, wait for certain period of time and repeat
+        // availability checking.
+        self.ndefReaderSession?.connect(to: tag) { (error: Error?) in
+            guard error == nil && tag.isAvailable
+            else {
+                "Restart polling".printDebugInfo()
+                self.ndefReaderSession?.restartPolling()
+                return
+            }
+            DispatchQueue.global().asyncAfter(
+                deadline: DispatchTime.now() + .milliseconds(500),
+                execute: {
+                    self.ndefTagRemovalDetect(tag)
+                }
+            )
+        }
+    }
+}
+
+// MARK: NFCNDEFReaderSessionDelegate
 extension OrzNFC: NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
@@ -51,13 +96,20 @@ extension OrzNFC: NFCNDEFReaderSessionDelegate {
                     session.invalidate(errorMessage: AlertMessage.ndefQueryFailed)
                     return
                 }
-                self.process(tag: tag, of: session, status: ndefStatus, capacity: capacity, action: action)
+                self.process(
+                    tag: tag,
+                    of: session,
+                    status: ndefStatus,
+                    capacity: capacity,
+                    action: action
+                )
             }
         }
         
     }
 }
 
+// MARK: Read/Write Process
 extension OrzNFC {
     
     func process(

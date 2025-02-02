@@ -1,5 +1,50 @@
 import CoreNFC
 
+// MARK: Tag Reader Session
+extension OrzNFC {
+    
+    func tagScan(pollingOption: NFCTagReaderSession.PollingOption) {
+        guard canRead
+        else {
+            alertMessageSubject.send(OrzNFC.AlertMessage.deviceNotSupport)
+            return
+        }
+        tagReaderSession = NFCTagReaderSession(
+            pollingOption: pollingOption,
+            delegate: self,
+            queue: nil
+        )
+        guard let tagReaderSession
+        else {
+            return
+        }
+        tagReaderSession.alertMessage = AlertMessage.tagAlert
+        tagReaderSession.begin()
+    }
+    
+    func tagRemovalDetect(_ tag: NFCTag) {
+        // In the tag removal procedure, you connect to the tag and query for
+        // its availability. You restart RF polling when the tag becomes
+        // unavailable; otherwise, wait for certain period of time and repeat
+        // availability checking.
+        self.tagReaderSession?.connect(to: tag) { (error: Error?) in
+            guard error == nil && tag.isAvailable
+            else {
+                "Restart polling".printDebugInfo()
+                self.tagReaderSession?.restartPolling()
+                return
+            }
+            DispatchQueue.global().asyncAfter(
+                deadline: DispatchTime.now() + .milliseconds(500),
+                execute: {
+                    self.tagRemovalDetect(tag)
+                }
+            )
+        }
+    }
+}
+
+// MARK: NFCTagReaderSessionDelegate
 extension OrzNFC: NFCTagReaderSessionDelegate {
     
     func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
@@ -38,6 +83,7 @@ extension OrzNFC: NFCTagReaderSessionDelegate {
     }
 }
 
+// MARK: Read/Write Process
 extension OrzNFC {
     func process(
         tag: NFCTag,

@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreNFC
 
 enum TabPageID {
     case ndef
@@ -13,6 +14,8 @@ struct NFCAvailableView: View {
     
     @State private var actionType: ActionType = .read
     
+    @State private var tagPollingOption: NFCTagReaderSession.PollingOption = .iso14443
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             NDEFView(actionType: $actionType)
@@ -20,7 +23,7 @@ struct NFCAvailableView: View {
                     Label("NDEF", image: "NFC")
                 }
                 .tag(TabPageID.ndef)
-            OtherTagView()
+            OtherTagView(actionType: $actionType, pollingOption: $tagPollingOption)
                 .tabItem {
                     Label("Tag", systemImage: "sensor.tag.radiowaves.forward")
                 }
@@ -38,14 +41,14 @@ struct NFCAvailableView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: iconSize, height: iconSize)
             }
-            .onTapGesture {
-                appModel
-                    .start(
-                        on: selectedTab,
-                        action: actionType
-                    )
-            }
             .offset(y: 200)
+            .onTapGesture {
+                appModel.start(
+                    on: selectedTab,
+                    action: actionType,
+                    tagPollingOption: tagPollingOption
+                )
+            }
         })
     }
 }
