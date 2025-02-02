@@ -215,8 +215,10 @@
 		2B5255852D4F09B7002AE491 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2BCF341E2A2DCE4E007FDA02 /* Utils */,
 				2B5255822D4F0923002AE491 /* Manual */,
+				2B5619282D4BE36900921DCC /* Mifare */,
+				2BCF34202A2DCE4E007FDA02 /* Protocol */,
+				2BCF341E2A2DCE4E007FDA02 /* Utils */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -283,9 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				2B5619262D4BCCBA00921DCC /* Defines.swift */,
-				2B5619282D4BE36900921DCC /* Mifare */,
 				2BCF34232A2DCE4E007FDA02 /* ACR122U */,
-				2BCF34202A2DCE4E007FDA02 /* Protocol */,
 			);
 			path = Core;
 			sourceTree = "<group>";
