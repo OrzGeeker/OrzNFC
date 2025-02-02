@@ -14,7 +14,7 @@ struct NFCAvailableView: View {
     
     @State private var actionType: ActionType = .read
     
-    @State private var tagPollingOption: NFCTagReaderSession.PollingOption = .iso14443
+    @State private var tagPollingOption: NFCTagReaderSession.PollingOption = .iso14443_15693_18092
     
     var body: some View {
         TabView(selection: $selectedTab) {

@@ -2,10 +2,13 @@ import CoreNFC
 import SwiftUI
 
 extension NFCTagReaderSession.PollingOption: @retroactive CaseIterable {
-    public static var allCases: [NFCTagReaderSession.PollingOption] = [
+    static let iso14443_15693_18092: NFCTagReaderSession.PollingOption = .init([
         .iso14443,
         .iso15693,
         .iso18092,
+    ])
+    public static var allCases: [NFCTagReaderSession.PollingOption] = [
+        .iso14443_15693_18092,
         .pace,
     ]
 }
@@ -13,12 +16,8 @@ extension NFCTagReaderSession.PollingOption: @retroactive CaseIterable {
 extension NFCTagReaderSession.PollingOption: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
-        case .iso14443:
-            return "iso14443"
-        case .iso15693:
-            return "iso15693"
-        case .iso18092:
-            return "iso18092"
+        case .iso14443_15693_18092:
+            return "ISO_14443_15693_18092"
         case .pace:
             return "pace"
         default:
